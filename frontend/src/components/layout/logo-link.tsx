@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Logo } from "@/components/layout/logo";
 
 export function LogoLink() {
 	const pathname = usePathname();
@@ -9,13 +10,13 @@ export function LogoLink() {
 
 	return isActive ? (
 		<span aria-current={"page"} aria-label="Home page">
-			LOGO HOME
+			<Logo />
 			<span className="sr-only">(current page)</span>
 		</span>
 	) : (
 		<div>
 			<Link href="/" aria-label="Home page">
-				LOGO HOME
+				<Logo />
 			</Link>
 		</div>
 	);
