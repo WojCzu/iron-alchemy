@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import debounce from "lodash/debounce";
 
 export function useIsDesktop(breakpoint = 640) {
 	const [isDesktop, setIsDesktop] = useState(false);
@@ -8,12 +9,12 @@ export function useIsDesktop(breakpoint = 640) {
 			setIsDesktop(window.matchMedia(`(min-width: ${breakpoint}px)`).matches);
 		};
 
-		checkIsDesktop();
+		const debouncedCheckIsDesktop = debounce(checkIsDesktop, 200);
 
-		window.addEventListener("resize", checkIsDesktop);
+		window.addEventListener("resize", debouncedCheckIsDesktop);
 
 		return () => {
-			window.removeEventListener("resize", checkIsDesktop);
+			window.removeEventListener("resize", debouncedCheckIsDesktop);
 		};
 	}, [breakpoint]);
 
