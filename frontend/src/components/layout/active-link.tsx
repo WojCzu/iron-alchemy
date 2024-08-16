@@ -23,11 +23,15 @@ export function ActiveLink<T extends string>({
 	const isActive = exact ? pathname === href : pathname.includes(href);
 
 	return isActive ? (
-		<span aria-current={"page"}>
+		<span aria-current={"page"} className="text-foreground">
 			{children} <span className="sr-only">(current page)</span>
 		</span>
 	) : (
-		<Link href={href} tabIndex={tabIndex}>
+		<Link
+			href={href}
+			tabIndex={tabIndex}
+			className="text-muted-foreground hover:text-primary focus:text-primary"
+		>
 			{children}
 		</Link>
 	);
