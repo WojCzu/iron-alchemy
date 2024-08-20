@@ -3,7 +3,7 @@ import { LogoLink } from "@/components/layout/logo-link";
 
 export function Header() {
 	return (
-		<header className="border-b-2">
+		<header>
 			<a href="#main-content" className="sr-only focus:not-sr-only focus:absolute">
 				Skip to main content
 			</a>

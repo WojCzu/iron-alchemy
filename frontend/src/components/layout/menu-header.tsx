@@ -41,7 +41,7 @@ export function MenuHeader() {
 				aria-hidden={!isOpen}
 				ref={menuRef}
 				className={clsx(
-					"fixed inset-0 left-1/3 z-40 flex flex-col gap-8 bg-popover-foreground/10 px-8 backdrop-blur-sm transition-transform [padding-block:min(30vh,10rem)] sm:static sm:translate-x-0 sm:flex-row sm:gap-4 sm:bg-transparent sm:p-0",
+					"fixed inset-0 left-1/3 z-40 flex flex-col bg-popover-foreground/10 px-8 backdrop-blur-sm transition-transform [padding-block:min(30vh,10rem)] sm:static sm:translate-x-0 sm:flex-row sm:gap-4 sm:bg-transparent sm:p-0",
 					{ "translate-x-0": isOpen },
 					{ "translate-x-full": !isOpen },
 				)}
