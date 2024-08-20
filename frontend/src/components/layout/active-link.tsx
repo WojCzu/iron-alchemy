@@ -23,14 +23,17 @@ export function ActiveLink<T extends string>({
 	const isActive = exact ? pathname === href : pathname.includes(href);
 
 	return isActive ? (
-		<span aria-current={"page"} className="text-foreground">
+		<span
+			aria-current={"page"}
+			className="block border-b-4 border-primary px-2 py-4 font-semibold lowercase text-foreground"
+		>
 			{children} <span className="sr-only">(current page)</span>
 		</span>
 	) : (
 		<Link
 			href={href}
 			tabIndex={tabIndex}
-			className="text-muted-foreground hover:text-primary focus:text-primary"
+			className="block px-2 py-4 font-semibold lowercase text-muted-foreground hover:text-primary focus-visible:text-primary"
 		>
 			{children}
 		</Link>
