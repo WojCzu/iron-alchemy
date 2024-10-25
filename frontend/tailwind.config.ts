@@ -86,6 +86,12 @@ const config = {
 				"accordion-up": "accordion-up 0.2s ease-out",
 				"slow-pulse": "slow-pulse 6s infinite linear",
 			},
+			boxShadow: {
+				primary: "0 35px 60px -15px hsl(var(--primary))",
+				"primary-sm": "0 16px 20px -8px hsl(var(--primary))",
+				secondary: "0 35px 60px -15px hsl(var(--secondary))",
+				"secondary-sm": "0 16px 20px -8px hsl(var(--secondary))",
+			},
 		},
 	},
 	plugins: [require("tailwindcss-animate")],

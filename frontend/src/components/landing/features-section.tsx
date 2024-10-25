@@ -1,0 +1,44 @@
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/common/Card";
+
+export function FeaturesSection() {
+	return (
+		<section className="container grid grid-cols-1 gap-5 py-52 md:grid-cols-2 lg:grid-cols-4">
+			<Card className="min-w-52 max-w-full md:min-w-72" href="/tools">
+				<CardHeader>
+					<CardTitle>Tools for Powerlifters</CardTitle>
+					<CardDescription>
+						Utilize tools like One Rep Max Calculator, DOTS Calculator, Load Drop Calculator, and
+						more to optimize your training.
+					</CardDescription>
+				</CardHeader>
+			</Card>
+			<Card className="min-w-52 max-w-full md:min-w-72" href="/blog">
+				<CardHeader>
+					<CardTitle>Training Tips</CardTitle>
+					<CardDescription>
+						Dive into articles on training and programming. Learn how to perform manual muscle
+						tests, understand muscle synergies and antagonists, and more.
+					</CardDescription>
+				</CardHeader>
+			</Card>
+			<Card className="min-w-52 max-w-full md:min-w-72" href="/log">
+				<CardHeader>
+					<CardTitle>Training Log</CardTitle>
+					<CardDescription>
+						Record your workouts and track progress through microcycles, mesocycles, and macrocycles
+						with advanced metrics and indicators.
+					</CardDescription>
+				</CardHeader>
+			</Card>
+			<Card className="min-w-52 max-w-full md:min-w-72" href="/trainers-corner">
+				<CardHeader>
+					<CardTitle>Trainer’s Corner</CardTitle>
+					<CardDescription>
+						Create, edit, and assign training plans. Monitor athletes&apos; progress with dashboards
+						and get alerts when intervention is needed.
+					</CardDescription>
+				</CardHeader>
+			</Card>
+		</section>
+	);
+}
