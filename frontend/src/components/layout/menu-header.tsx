@@ -50,7 +50,7 @@ export function MenuHeader() {
 				)}
 			>
 				<li className="sm:hidden">
-					<ActiveLink href="/" tabIndex={linkTabIndex}>
+					<ActiveLink exact href="/" tabIndex={linkTabIndex}>
 						Home
 					</ActiveLink>
 				</li>
