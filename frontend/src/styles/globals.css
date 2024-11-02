@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "swiper/css";
+@import "swiper/css/autoplay";
+@import "swiper/css/pagination";
+@import "./swiper-custom.css";
+
 @layer base {
 	:root {
 		--background: 0 0% 100%;
@@ -65,5 +70,12 @@
 	}
 	body {
 		@apply bg-background text-foreground;
+	}
+}
+
+@layer utilities {
+	.mask-gradient {
+		mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+		-webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 	}
 }
