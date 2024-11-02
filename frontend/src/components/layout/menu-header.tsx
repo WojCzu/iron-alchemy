@@ -7,6 +7,7 @@ import { ActiveLink } from "@/components/layout/active-link";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
+import { cn } from "@/lib/utils";
 
 export function MenuHeader() {
 	const menuRef = useRef<HTMLUListElement>(null);
@@ -28,7 +29,9 @@ export function MenuHeader() {
 			<button
 				aria-controls="primary-navigation"
 				aria-expanded={isOpen}
-				className="z-50 sm:hidden"
+				className={cn("z-50 sm:hidden", {
+					"fixed right-8 top-7": !isDesktop && isOpen,
+				})}
 				onClick={() => setIsOpen((prevValue) => !prevValue)}
 				ref={btnRef}
 			>
@@ -41,7 +44,7 @@ export function MenuHeader() {
 				aria-hidden={!isOpen}
 				ref={menuRef}
 				className={clsx(
-					"fixed inset-0 left-1/3 z-40 flex flex-col bg-popover-foreground/10 px-8 backdrop-blur-sm transition-transform [padding-block:min(30vh,10rem)] sm:static sm:translate-x-0 sm:flex-row sm:gap-4 sm:bg-transparent sm:p-0",
+					"fixed inset-0 z-40 flex flex-col bg-popover px-8 transition-transform [padding-block:min(30vh,10rem)] min-[380px]:left-1/3 min-[380px]:bg-popover/95 min-[380px]:backdrop-blur-sm sm:static sm:translate-x-0 sm:flex-row sm:gap-4 sm:border-none sm:bg-transparent sm:p-0 sm:backdrop-blur-none",
 					{ "translate-x-0": isOpen },
 					{ "translate-x-full": !isOpen },
 				)}
