@@ -79,3 +79,12 @@
 		-webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 	}
 }
+
+@layer components {
+	.section-spacing {
+		@apply my-20 md:my-36 lg:my-52;
+	}
+	.section-title {
+		@apply mb-10 text-center text-3xl font-bold md:text-4xl;
+	}
+}
