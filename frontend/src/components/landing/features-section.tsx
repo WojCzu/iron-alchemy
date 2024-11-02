@@ -4,8 +4,8 @@ export function FeaturesSection() {
 	return (
 		<section className="section-spacing container">
 			<h2 className="section-title">Unlock Your Powerlifting Toolbox!</h2>
-			<div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-				<Card className="min-w-52 max-w-full md:min-w-72" href="/tools">
+			<div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+				<Card className="min-w-52 max-w-full lg:min-w-72" href="/tools">
 					<CardHeader>
 						<CardTitle>Tools for Powerlifters</CardTitle>
 						<CardDescription>
