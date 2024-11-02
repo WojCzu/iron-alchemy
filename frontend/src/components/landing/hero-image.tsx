@@ -3,7 +3,7 @@ import React from "react";
 
 export function HeroImage() {
 	return (
-		<div className="absolute inset-0 -z-10 overflow-hidden before:absolute before:right-[15%] before:top-0 before:z-10 before:block before:h-full before:w-80 before:animate-slow-pulse before:bg-gradient-to-b before:from-primary before:to-secondary before:opacity-25 before:content-['']">
+		<div className="absolute inset-0 -z-10 overflow-hidden before:absolute before:right-[15%] before:top-0 before:z-10 before:block before:h-full before:w-80 before:animate-slow-pulse before:bg-gradient-to-b before:from-primary before:to-secondary before:content-['']">
 			<Image
 				alt=""
 				role="presentation"
