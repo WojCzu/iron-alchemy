@@ -42,8 +42,10 @@ export function TestimonialsSection() {
 	if (!isClient) return null;
 
 	return (
-		<section className="section-spacing container">
-			<h2 className="section-title">Why Lifters Love Us?</h2>
+		<section className="section-spacing container" aria-labelledby="testimonials">
+			<h2 className="section-title" id="testimonials">
+				Why Lifters Love Us?
+			</h2>
 			<Swiper
 				modules={[Autoplay, Pagination]}
 				slidesPerView={1}

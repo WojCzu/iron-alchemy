@@ -16,7 +16,7 @@ const Card = React.forwardRef<HTMLAnchorElement | HTMLDivElement, CardProps<stri
 					href={href}
 					ref={ref as React.Ref<HTMLAnchorElement>}
 					className={cn(
-						"hover:shadow-primary-sm rounded-xl border bg-card text-card-foreground focus-visible:shadow-primary md:hover:shadow-primary",
+						"rounded-xl border bg-card text-card-foreground hover:shadow-primary-sm focus-visible:shadow-primary md:hover:shadow-primary",
 						className,
 					)}
 				/>
@@ -41,9 +41,13 @@ const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDiv
 );
 CardHeader.displayName = "CardHeader";
 
-const CardTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(
-	({ className, ...props }, ref) => (
-		<h3
+type CardTitleProps = React.HTMLAttributes<HTMLHeadingElement> & {
+	as?: React.ElementType;
+};
+
+const CardTitle = React.forwardRef<HTMLElement, CardTitleProps>(
+	({ className, as: Component = "h3", ...props }, ref) => (
+		<Component
 			ref={ref}
 			className={cn("font-semibold leading-none tracking-tight", className)}
 			{...props}

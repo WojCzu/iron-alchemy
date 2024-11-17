@@ -2,8 +2,10 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/commo
 
 export function FeaturesSection() {
 	return (
-		<section className="section-spacing container">
-			<h2 className="section-title">Unlock Your Powerlifting Toolbox!</h2>
+		<section className="section-spacing container" aria-labelledby="features">
+			<h2 className="section-title" id="features">
+				Unlock Your Powerlifting Toolbox!
+			</h2>
 			<div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
 				<Card className="min-w-52 max-w-full lg:min-w-72" href="/tools">
 					<CardHeader>
