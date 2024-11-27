@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Iron Alchemy
 
-## Getting Started
+> 🚧 **Project Name**: "Iron Alchemy" is a working title for development purposes and may be subject to change before release.
 
-First, run the development server:
+Iron Alchemy is a comprehensive web application designed for powerlifting enthusiasts, built with Next.js, React, TypeScript, and Tailwind CSS. The platform offers various tools and resources to optimize training and track progress. Using modern sports science principles, it helps athletes monitor crucial training metrics such as exertion load, relative intensity, and volume-load calculations. This data-driven approach enables smarter training decisions and helps prevent both overtraining and undertraining scenarios.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+> ⚠️ **Note**: This repository contains only the frontend part of the application. A compatible backend service is required for full functionality.
+
+## Features
+
+### 🏋️‍♂️ Training Tools
+
+- Load Drop Calculator
+- One Rep Max Calculator
+- DOTS Calculator
+
+### 📝 Training Journal
+
+- Log and track your workouts
+- Monitor progress across different training cycles
+- Visualize performance trends
+
+### 📚 Blog
+
+- Access articles about training techniques
+- Learn about programming methodologies
+
+### 👥 Coaching Panel
+
+- Create and assign training plans
+- Monitor client progress
+- Manage multiple athletes
+
+## Technical Stack
+
+- **Frontend Framework**: [Next.js](https://nextjs.org/) with [TypeScript](https://www.typescriptlang.org/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+
+## Project Structure
+
+The project follows a modern Next.js 14 App Router structure:
+
+```
+iron-alchemy/
+├── src/
+│   ├── app/          # Next.js 14 App Router pages and layouts
+│   ├── components/   # UI components
+│   │   ├── common/   # Reusable components across the entire app
+│   │   └── [page]/   # Page-specific components
+│   ├── contexts/     # Context providers
+│   ├── hooks/        # Custom React hooks
+│   ├── lib/          # Core utilities and configurations
+│   └── styles/       # Global styles
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> Note: `[page]` represents feature-specific component directories (e.g., landing, tools, blog) that contain components used only within their respective pages.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Roadmap
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Phase 1: Foundations (v0.2.x)
 
-## Learn More
+- [x] Environment setup (Next.js, Tailwind CSS)
+- [ ] Core pages setup
+  - [ ] Initial routing structure for `/login`, `/register`, `/tools`, `/journal`, `/blog`, `/coaching`
+  - [ ] Under construction page template
+  - [ ] Implement under construction state for all non-landing pages
+- [ ] Landing page (initial version)
+  - [ ] Hero section
+  - [ ] Features overview
+  - [ ] Testimonials section (static placeholder)
+  - [ ] Call-to-action
 
-To learn more about Next.js, take a look at the following resources:
+## Phase 2: Tools (v0.3.x) (pre-release)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [ ] Load Drop Calculator
+- [ ] One Rep Max Calculator
+- [ ] DOTS Calculator
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Phase 3: Authorization (v0.4.x)
 
-## Deploy on Vercel
+- [ ] User login and registration
+- [ ] Backend connection (API)
+- [ ] Page protection with JWT tokens
+- [ ] Admin panel and roles
+- [ ] Review submission form
+- [ ] Display approved reviews
+- [ ] Review moderation (for admin)
+- [ ] Update landing page testimonials with backend reviews
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Phase 4: Blog (v0.5.x) (pre-release)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [ ] Post list page (`/blog`) with SSG
+- [ ] Post details page (`/blog/[slug]`) with ISR
+- [ ] Post creation form (admin panel)
+
+## Phase 5: Measurements (v0.6.x) (pre-release)
+
+- [ ] Measurement input form
+- [ ] Measurement history with table
+- [ ] Data visualization (charts)
+
+## Phase 6: Workouts (v1.x.x-beta)
+
+- [ ] Workout creation form
+- [ ] Workout history (`/dashboard/trainings`)
+- [ ] Workout details (`/dashboard/trainings/[id]`)
+
+## Release: First Application Version (v1.0.0)
+
+Scope:
+
+- Login and registration
+- Workouts: history and new entries
+- Measurements: table and visualizations
+- Tools: load drop, one rep max, dots calculators
+- Blog with post management
+- Reviews with moderation
+
+### **Future Phases**
+
+- **Coaching Panel**
+  - Workout creator and planner
+  - Client management features for trainers
+  - Ability to assign workouts to clients
+  - Workout simulation
+
+---
+
+> Note: This project is currently under development. Some features might be in progress or subject to change.
