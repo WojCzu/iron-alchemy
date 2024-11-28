@@ -56,6 +56,137 @@ iron-alchemy/
 
 > Note: `[page]` represents feature-specific component directories (e.g., landing, tools, blog) that contain components used only within their respective pages.
 
+## Git Workflow
+
+> Note: This workflow is designed to support the phase-based development approach outlined in the project roadmap while maintaining clean version history.
+
+### Branch Strategy
+
+```
+master                              # Production-ready code
+├── develop                         # Integration branch
+│   ├── feat/[phase]-develop        # Current phase development
+│   │   ├── feat/[phase]/*          # Feature branches
+│   │   ├── test/[phase]/*          # Test branches
+│   │   └── fix/[phase]/*           # Fix branches
+│   ├── ci/*                        # CI/CD configuration
+│   └── docs/*                      # Documentation branches
+└── hotfix/*                        # Hotfix branches
+```
+
+### Branch Flow
+
+```
+Features:    feat/[phase]/[name] → feat/[phase]-develop → develop → master
+Docs/CI:     (docs|ci)/[name] → develop → master
+Hotfix:      hotfix/[name] → master → develop → feat/[phase]-develop
+```
+
+### Branch Naming Convention
+
+- `master` - Production code
+- `develop` - Integration and testing
+- `feat/[phase]-develop` - Development branch for specific phase (e.g., `feat/foundations-develop`)
+- `feat/[phase]/[name]` - Feature branches (e.g., `feat/foundations/landing-page`)
+- `fix/[phase]/[name]` - Bug fixes (e.g., `fix/foundations/calculator`)
+- `test/[phase]/[name]` - Test additions or updates
+- `ci/[name]` - CI/CD configuration (merges to develop)
+- `docs/[name]` - Documentation updates (merges to develop)
+- `hotfix/[name]` - Production hotfixes (merges to master and develop)
+
+### Merge Strategies
+
+#### Into `master`:
+
+```bash
+# Always squash merge to keep master history clean
+git checkout master
+git merge --squash (develop | hotfix/*) # Only merge from develop or hotfix branches
+```
+
+#### Into `develop`:
+
+```bash
+# Regular merge with --no-ff to preserve feature history
+git checkout develop
+git merge --no-ff (feat/[phase]-develop | ci/* | docs/*)
+
+# Rebase when getting updates from master
+git checkout develop
+git pull origin master    # After hotfix
+```
+
+#### Into `feat/[phase]-develop`:
+
+```bash
+# Regular merge with --no-ff for features
+git checkout feat/[phase]-develop
+git merge --no-ff (feat|test|fix)/[phase]/*
+
+# Rebase when getting updates from develop
+git checkout feat/[phase]-develop
+git rebase develop
+```
+
+#### Feature Development:
+
+```bash
+# Keep feature branches up-to-date with rebase
+git checkout (feat|test|fix)/[phase]/[name]
+git rebase feat/[phase]-develop
+```
+
+### Hotfix Process
+
+```bash
+# Create hotfix
+git checkout master
+git checkout -b hotfix/*
+
+# Merge to master
+git checkout master
+git merge --squash hotfix/*
+git tag -a vX.Y.Z+1 -m "Hotfix: [description]"
+
+# Update develop
+git checkout develop
+git pull origin master
+
+# Update all [phase]-develop branches
+git checkout feat/[phase]-develop
+git rebase develop
+```
+
+> Note: Branch updates and version tagging will be automated through CI/CD pipeline in the future.
+
+### Commit Conventions
+
+Based on [Conventional Commits](https://www.conventionalcommits.org/):
+
+```bash
+type: description
+
+# Types
+feat:     New feature
+fix:      Bug fix
+docs:     Documentation changes
+style:    Formatting, missing semi colons, etc
+refactor: Code change that neither fixes a bug nor adds a feature
+test:     Adding missing tests
+chore:    Maintain dependencies, package updates, etc
+ci:       CI/CD configuration and pipeline changes
+
+# Examples
+feat: add 1RM calculator
+fix: resolve token refresh issue
+docs: update git workflow
+style: format component files
+refactor: simplify calculator logic
+test: add calculator validation tests
+chore: update dependencies
+ci: add cascade automation
+```
+
 ## Roadmap
 
 ## Phase 1: Foundations (v0.2.x)
