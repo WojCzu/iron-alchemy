@@ -2,6 +2,31 @@
 
 > 🚧 **Project Name**: "Iron Alchemy" is a working title for development purposes and may be subject to change before release.
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Technical Stack](#technical-stack)
+- [Project Structure](#project-structure)
+- [Git Workflow](#git-workflow)
+  - [Branch Strategy](#branch-strategy)
+  - [Branch Flow](#branch-flow)
+  - [Branch Naming Convention](#branch-naming-convention)
+  - [Merge Strategies](#merge-strategies)
+  - [Hotfix Process](#hotfix-process)
+  - [Commit Conventions](#commit-conventions)
+- [Roadmap](#roadmap)
+  - [Phase 1: Foundations (v0.2.x)](#phase-1-foundations-v02x)
+  - [Phase 2: Tools (v0.3.x) (pre-release)](#phase-2-tools-v03x-pre-release)
+  - [Phase 3: Authorization (v0.4.x)](#phase-3-authorization-v04x)
+  - [Phase 4: Blog (v0.5.x) (pre-release)](#phase-4-blog-v05x-pre-release)
+  - [Phase 5: Measurements (v0.6.x) (pre-release)](#phase-5-measurements-v06x-pre-release)
+  - [Phase 6: Workouts (v1.x.x-beta)](#phase-6-workouts-v1xx-beta)
+  - [Release: First Application Version (v1.0.0)](#release-first-application-version-v100)
+  - [Future Phases](#future-phases)
+
+## Overview
+
 Iron Alchemy is a comprehensive web application designed for powerlifting enthusiasts, built with Next.js, React, TypeScript, and Tailwind CSS. The platform offers various tools and resources to optimize training and track progress. Using modern sports science principles, it helps athletes monitor crucial training metrics such as exertion load, relative intensity, and volume-load calculations. This data-driven approach enables smarter training decisions and helps prevent both overtraining and undertraining scenarios.
 
 > ⚠️ **Note**: This repository contains only the frontend part of the application. A compatible backend service is required for full functionality.
@@ -239,7 +264,7 @@ ci: add cascade automation
 
 ## Release: First Application Version (v1.0.0)
 
-Scope:
+**Scope:**
 
 - Login and registration
 - Workouts: history and new entries
@@ -248,7 +273,7 @@ Scope:
 - Blog with post management
 - Reviews with moderation
 
-### **Future Phases**
+## Future Phases
 
 - **Coaching Panel**
   - Workout creator and planner
