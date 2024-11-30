@@ -1,12 +1,16 @@
 # Iron Alchemy
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/assets/logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="public/assets/logo-light.svg">
+    <img alt="Iron Alchemy Logo" src="public/assets/logo-dark.svg" width="600">
+  </picture>
+</p>
+
 ## Overview
 
 Iron Alchemy is a comprehensive web application designed for powerlifting enthusiasts, built with Next.js, React, TypeScript, and Tailwind CSS. The platform offers various tools and resources to optimize training and track progress. Using modern sports science principles, it helps athletes monitor crucial training metrics such as exertion load, relative intensity, and volume-load calculations. This data-driven approach enables smarter training decisions and helps prevent both overtraining and undertraining scenarios.
-
-> 🚧 **Project Name**: "Iron Alchemy" is a working title for development purposes and may be subject to change before release.
-
-## Table of Contents
 
 - [Features](#features)
 - [Technical Stack](#technical-stack)
