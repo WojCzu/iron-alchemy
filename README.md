@@ -9,11 +9,6 @@
 - [Technical Stack](#technical-stack)
 - [Project Structure](#project-structure)
 - [Git Workflow](#git-workflow)
-  - [Branch Strategy](#branch-strategy)
-  - [Branch Flow](#branch-flow)
-  - [Branch Naming Convention](#branch-naming-convention)
-  - [Merge Strategies](#merge-strategies)
-  - [Hotfix Process](#hotfix-process)
   - [Commit Conventions](#commit-conventions)
 - [Roadmap](#roadmap)
   - [Phase 1: Foundations (v0.2.x)](#phase-1-foundations-v02x)
@@ -83,128 +78,16 @@ iron-alchemy/
 
 ## Git Workflow
 
-> Note: This workflow is designed to support the phase-based development approach outlined in the project roadmap while maintaining clean version history.
-> 🔄 **Future Automation**: Branch synchronization will be automated through CI/CD pipeline to eliminate manual force pushes and ensure consistent updates across all branches.
+Based on [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow)
 
-### Branch Types and Conventions
+### Workflow Steps
 
-#### Long-lived Branches (use merge/pull)
-
-- `master` - Production code
-- `develop` - Integration and testing
-- `feat/[phase]-develop` - Development branch for specific phase (e.g., `feat/foundations-develop`)
-
-These shared, long-lived branches should:
-
-- Never be rebased
-- Use `pull` for updates from parent branches
-- Use regular merges with `--no-ff`
-- May require admin force push after syncing
-
-#### Short-lived Branches (use rebase)
-
-- `feat/[phase]/[name]` - Feature branches (e.g., `feat/foundations/landing-page`)
-- `fix/[phase]/[name]` - Bug fixes (e.g., `fix/tools/calculator`)
-- `test/[phase]/[name]` - Test additions or updates branches (e.g., `test/tools/calculator`)
-- `docs/[name]` - Documentation updates (e.g., `docs/update-git-worfklow`)
-- `ci/[name]` - CI/CD configuration (e.g., `ci/cascade-sync`)
-- `hotfix/[name]` - Production hotfixes (e.g., `hotfix/jwt-refresh`)
-
-These temporary branches should:
-
-- Rebase onto their parent branch before PR
-- Get deleted after merge
-
-### Branch Flow
-
-```
-master
-├── develop
-│   ├── feat/[phase]-develop
-│   │   ├── feat/[phase]/*
-│   │   ├── test/[phase]/*
-│   │   └── fix/[phase]/*
-│   ├── ci/*
-│   └── docs/*
-└── hotfix/*
-```
-
-```
-# Upstream (PRs):
-Features:    feat/[phase]/[name] → feat/[phase]-develop → develop → master
-Docs/CI:     (docs|ci)/[name] → develop → master
-Hotfix:      hotfix/[name] → master
-
-# Downstream (syncs):
-master → develop → feat/[phase]-develop
-```
-
-### Merge Strategies
-
-#### Into `master`:
-
-```bash
-# Always squash merge to keep master history clean
-git checkout master
-git merge --squash (develop | hotfix/*) # Only merge from develop or hotfix branches
-```
-
-#### Into `develop`:
-
-```bash
-# Regular merge with --no-ff to preserve feature history
-git checkout develop
-git merge --no-ff (feat/[phase]-develop | ci/* | docs/*)
-
-# After release/hotfix
-git checkout develop
-git pull origin master
-git push origin develop   # Admin might need to push
-```
-
-#### Into `feat/[phase]-develop`:
-
-```bash
-# Regular merge with --no-ff for features
-git checkout feat/[phase]-develop
-git merge --no-ff (feat|test|fix)/[phase]/*
-
-# After develop updates
-git checkout feat/[phase]-develop
-git merge develop
-git push origin feat/[phase]-develop  # Admin might need to push
-```
-
-#### Feature Development:
-
-```bash
-# Keep feature branches up-to-date with rebase
-git checkout (feat|test|fix)/[phase]/[name]
-git rebase feat/[phase]-develop
-```
-
-### Hotfix Process
-
-```bash
-# Create and merge hotfix
-git checkout master
-git checkout -b hotfix/*
-
-# Merge to master
-git checkout master
-git merge --squash hotfix/*
-git tag -a vX.Y.Z+1 -m "Hotfix: [description]"
-
-# Update develop
-git checkout develop
-git pull origin master
-git push origin develop   # Admin might need to push
-
-# Update all [phase]-develop branches
-git checkout feat/[phase]-develop
-git pull origin develop
-git push origin feat/[phase]-develop  # Admin might need to push
-```
+1. Create a branch from `master`
+2. Add commits
+3. Open a Pull Request
+4. Review
+5. Deploy & Test
+6. Merge to `master`
 
 ### Commit Conventions
 
