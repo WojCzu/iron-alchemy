@@ -217,15 +217,15 @@ ci: add cascade automation
 ## Phase 1: Foundations (v0.2.x)
 
 - [x] Environment setup (Next.js, Tailwind CSS)
-- [ ] Core pages setup
-  - [ ] Initial routing structure for `/login`, `/register`, `/tools`, `/journal`, `/blog`, `/coaching`
-  - [ ] Under construction page template
-  - [ ] Implement under construction state for all non-landing pages
-- [ ] Landing page (initial version)
-  - [ ] Hero section
-  - [ ] Features overview
-  - [ ] Testimonials section (static placeholder)
-  - [ ] Call-to-action
+- [x] Core pages setup
+  - [x] Initial routing structure for `/tools`, `/dashboard`, `/blog`, `/trainer`
+  - [x] Under construction page template
+  - [x] Implement under construction state for all non-landing pages
+- [x] Landing page (initial version)
+  - [x] Hero section
+  - [x] Features overview
+  - [x] Reviews section (static placeholder)
+  - [x] Call-to-action
 
 ## Phase 2: Tools (v0.3.x) (pre-release)
 
@@ -242,7 +242,7 @@ ci: add cascade automation
 - [ ] Review submission form
 - [ ] Display approved reviews
 - [ ] Review moderation (for admin)
-- [ ] Update landing page testimonials with backend reviews
+- [ ] Integrate landing page reviews with backend API
 
 ## Phase 4: Blog (v0.5.x) (pre-release)
 
