@@ -1,3 +1,5 @@
+import { ComingSoon } from "@/components/common/ComingSoon";
+
 export default function ToolsPage() {
-	return <div>Tools Page - under construction</div>;
+	return <ComingSoon />;
 }

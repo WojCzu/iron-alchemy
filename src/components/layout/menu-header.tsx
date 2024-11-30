@@ -55,18 +55,18 @@ export function MenuHeader() {
 					</ActiveLink>
 				</li>
 				<li>
-					<ActiveLink tabIndex={linkTabIndex} href="/tools">
-						Tools
-					</ActiveLink>
-				</li>
-				<li>
 					<ActiveLink tabIndex={linkTabIndex} href="/blog">
 						Blog
 					</ActiveLink>
 				</li>
 				<li>
-					<ActiveLink tabIndex={linkTabIndex} href="/log">
-						Log
+					<ActiveLink tabIndex={linkTabIndex} href="/tools">
+						Tools
+					</ActiveLink>
+				</li>
+				<li>
+					<ActiveLink tabIndex={linkTabIndex} href="/dashboard">
+						Dashboard
 					</ActiveLink>
 				</li>
 			</ul>
