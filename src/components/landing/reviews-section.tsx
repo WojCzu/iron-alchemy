@@ -3,14 +3,14 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { useEffect, useState } from "react";
-import { Testimonial } from "@/components/landing/testimonial";
-import type { Testimonial as TestimonialType } from "@/types/landing/testimonials";
+import { Review } from "@/components/landing/review";
+import type { Review as ReviewType } from "@/types/landing/reviews";
 
-type TestimonialsSectionProps = {
-	testimonials: TestimonialType[];
+type ReviewsSectionProps = {
+	reviews: ReviewType[];
 };
 
-export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
+export function ReviewsSection({ reviews }: ReviewsSectionProps) {
 	const [isClient, setIsClient] = useState(false);
 
 	useEffect(() => {
@@ -20,8 +20,8 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
 	if (!isClient) return null;
 
 	return (
-		<section className="section-spacing container" aria-labelledby="testimonials">
-			<h2 className="section-title" id="testimonials">
+		<section className="section-spacing container" aria-labelledby="reviews">
+			<h2 className="section-title" id="reviews">
 				Why Lifters Love Us?
 			</h2>
 			<Swiper
@@ -53,10 +53,10 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
 					},
 				}}
 			>
-				{testimonials.map(({ message, authorName, authorTitle }) => (
+				{reviews.map(({ message, authorName, authorTitle }) => (
 					<SwiperSlide className="md:w-min" key={message}>
 						{({ isActive }) => (
-							<Testimonial
+							<Review
 								message={message}
 								authorName={authorName}
 								authorTitle={authorTitle}

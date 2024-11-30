@@ -1,17 +1,17 @@
 import { HeroSection } from "@/components/landing/hero-section";
 import { FeaturesSection } from "@/components/landing/features-section";
-import { TestimonialsSection } from "@/components/landing/testimonials-section";
+import { ReviewsSection } from "@/components/landing/reviews-section";
 import { CallToActionSection } from "@/components/landing/call-to-action-section";
-import { getTestimonials } from "@/lib/landing/testimonials";
+import { getReviews } from "@/lib/landing/reviews";
 
 export default async function HomePage() {
-	const testimonials = await getTestimonials();
+	const reviews = await getReviews();
 
 	return (
 		<>
 			<HeroSection />
 			<FeaturesSection />
-			<TestimonialsSection testimonials={testimonials} />
+			<ReviewsSection reviews={reviews} />
 			<CallToActionSection />
 		</>
 	);

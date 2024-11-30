@@ -224,7 +224,7 @@ ci: add cascade automation
 - [x] Landing page (initial version)
   - [x] Hero section
   - [x] Features overview
-  - [x] Testimonials section (static placeholder)
+  - [x] Reviews section (static placeholder)
   - [x] Call-to-action
 
 ## Phase 2: Tools (v0.3.x) (pre-release)
@@ -242,7 +242,7 @@ ci: add cascade automation
 - [ ] Review submission form
 - [ ] Display approved reviews
 - [ ] Review moderation (for admin)
-- [ ] Update landing page testimonials with backend reviews
+- [ ] Integrate landing page reviews with backend API
 
 ## Phase 4: Blog (v0.5.x) (pre-release)
 

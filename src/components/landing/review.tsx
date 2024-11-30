@@ -1,12 +1,12 @@
 import { Quote } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import type { Testimonial } from "@/types/landing/testimonials";
+import type { Review } from "@/types/landing/reviews";
 
-type TeestimonialProps = Testimonial & {
+type ReviewProps = Review & {
 	active?: boolean;
 };
-export function Testimonial({ message, authorName, authorTitle, active }: TeestimonialProps) {
+export function Review({ message, authorName, authorTitle, active }: ReviewProps) {
 	return (
 		<div
 			className={cn(
