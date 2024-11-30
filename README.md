@@ -84,40 +84,60 @@ iron-alchemy/
 ## Git Workflow
 
 > Note: This workflow is designed to support the phase-based development approach outlined in the project roadmap while maintaining clean version history.
+> 🔄 **Future Automation**: Branch synchronization will be automated through CI/CD pipeline to eliminate manual force pushes and ensure consistent updates across all branches.
 
-### Branch Strategy
+### Branch Types and Conventions
 
-```
-master                              # Production-ready code
-├── develop                         # Integration branch
-│   ├── feat/[phase]-develop        # Current phase development
-│   │   ├── feat/[phase]/*          # Feature branches
-│   │   ├── test/[phase]/*          # Test branches
-│   │   └── fix/[phase]/*           # Fix branches
-│   ├── ci/*                        # CI/CD configuration
-│   └── docs/*                      # Documentation branches
-└── hotfix/*                        # Hotfix branches
-```
-
-### Branch Flow
-
-```
-Features:    feat/[phase]/[name] → feat/[phase]-develop → develop → master
-Docs/CI:     (docs|ci)/[name] → develop → master
-Hotfix:      hotfix/[name] → master → develop → feat/[phase]-develop
-```
-
-### Branch Naming Convention
+#### Long-lived Branches (use merge/pull)
 
 - `master` - Production code
 - `develop` - Integration and testing
 - `feat/[phase]-develop` - Development branch for specific phase (e.g., `feat/foundations-develop`)
+
+These shared, long-lived branches should:
+
+- Never be rebased
+- Use `pull` for updates from parent branches
+- Use regular merges with `--no-ff`
+- May require admin force push after syncing
+
+#### Short-lived Branches (use rebase)
+
 - `feat/[phase]/[name]` - Feature branches (e.g., `feat/foundations/landing-page`)
-- `fix/[phase]/[name]` - Bug fixes (e.g., `fix/foundations/calculator`)
-- `test/[phase]/[name]` - Test additions or updates
-- `ci/[name]` - CI/CD configuration (merges to develop)
-- `docs/[name]` - Documentation updates (merges to develop)
-- `hotfix/[name]` - Production hotfixes (merges to master and develop)
+- `fix/[phase]/[name]` - Bug fixes (e.g., `fix/tools/calculator`)
+- `test/[phase]/[name]` - Test additions or updates branches (e.g., `test/tools/calculator`)
+- `docs/[name]` - Documentation updates (e.g., `docs/update-git-worfklow`)
+- `ci/[name]` - CI/CD configuration (e.g., `ci/cascade-sync`)
+- `hotfix/[name]` - Production hotfixes (e.g., `hotfix/jwt-refresh`)
+
+These temporary branches should:
+
+- Rebase onto their parent branch before PR
+- Get deleted after merge
+
+### Branch Flow
+
+```
+master
+├── develop
+│   ├── feat/[phase]-develop
+│   │   ├── feat/[phase]/*
+│   │   ├── test/[phase]/*
+│   │   └── fix/[phase]/*
+│   ├── ci/*
+│   └── docs/*
+└── hotfix/*
+```
+
+```
+# Upstream (PRs):
+Features:    feat/[phase]/[name] → feat/[phase]-develop → develop → master
+Docs/CI:     (docs|ci)/[name] → develop → master
+Hotfix:      hotfix/[name] → master
+
+# Downstream (syncs):
+master → develop → feat/[phase]-develop
+```
 
 ### Merge Strategies
 
@@ -136,9 +156,10 @@ git merge --squash (develop | hotfix/*) # Only merge from develop or hotfix bran
 git checkout develop
 git merge --no-ff (feat/[phase]-develop | ci/* | docs/*)
 
-# Rebase when getting updates from master
+# After release/hotfix
 git checkout develop
-git pull origin master    # After hotfix
+git pull origin master
+git push origin develop   # Admin might need to push
 ```
 
 #### Into `feat/[phase]-develop`:
@@ -148,9 +169,10 @@ git pull origin master    # After hotfix
 git checkout feat/[phase]-develop
 git merge --no-ff (feat|test|fix)/[phase]/*
 
-# Rebase when getting updates from develop
+# After develop updates
 git checkout feat/[phase]-develop
-git rebase develop
+git merge develop
+git push origin feat/[phase]-develop  # Admin might need to push
 ```
 
 #### Feature Development:
@@ -164,7 +186,7 @@ git rebase feat/[phase]-develop
 ### Hotfix Process
 
 ```bash
-# Create hotfix
+# Create and merge hotfix
 git checkout master
 git checkout -b hotfix/*
 
@@ -176,13 +198,13 @@ git tag -a vX.Y.Z+1 -m "Hotfix: [description]"
 # Update develop
 git checkout develop
 git pull origin master
+git push origin develop   # Admin might need to push
 
 # Update all [phase]-develop branches
 git checkout feat/[phase]-develop
-git rebase develop
+git pull origin develop
+git push origin feat/[phase]-develop  # Admin might need to push
 ```
-
-> Note: Branch updates and version tagging will be automated through CI/CD pipeline in the future.
 
 ### Commit Conventions
 
