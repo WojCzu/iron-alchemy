@@ -16,7 +16,7 @@ export function FeaturesSection() {
 						</CardDescription>
 					</CardHeader>
 				</Card>
-				<Card className="min-w-52 max-w-full lg:min-w-72" href="/tools">
+				<Card className="min-w-52 max-w-full md:min-w-72" href="/tools">
 					<CardHeader>
 						<CardTitle>Tools for Powerlifters</CardTitle>
 						<CardDescription>
