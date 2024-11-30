@@ -219,7 +219,7 @@ ci: add cascade automation
 - [x] Environment setup (Next.js, Tailwind CSS)
 - [ ] Core pages setup
   - [ ] Initial routing structure for `/login`, `/register`, `/tools`, `/journal`, `/blog`, `/coaching`
-  - [ ] Under construction page template
+  - [x] Under construction page template
   - [ ] Implement under construction state for all non-landing pages
 - [x] Landing page (initial version)
   - [x] Hero section
