@@ -1,0 +1,11 @@
+.swiper-pagination-bullet {
+	@apply mx-1 h-0.5 w-7 rounded-none bg-primary-foreground transition-all duration-300 ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+	@apply scale-125 transform bg-primary;
+}
+
+.swiper-pagination-bullet:hover {
+	@apply cursor-pointer bg-primary;
+}
