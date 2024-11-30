@@ -221,11 +221,11 @@ ci: add cascade automation
   - [ ] Initial routing structure for `/login`, `/register`, `/tools`, `/journal`, `/blog`, `/coaching`
   - [ ] Under construction page template
   - [ ] Implement under construction state for all non-landing pages
-- [ ] Landing page (initial version)
-  - [ ] Hero section
-  - [ ] Features overview
-  - [ ] Testimonials section (static placeholder)
-  - [ ] Call-to-action
+- [x] Landing page (initial version)
+  - [x] Hero section
+  - [x] Features overview
+  - [x] Testimonials section (static placeholder)
+  - [x] Call-to-action
 
 ## Phase 2: Tools (v0.3.x) (pre-release)
 
