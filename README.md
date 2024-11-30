@@ -109,15 +109,6 @@ ci: add cascade automation
 
 ## Roadmap
 
-- [Phase 1: Foundations (v0.2.x)](#phase-1-foundations-v02x)
-- [Phase 2: Tools (v0.3.x) (pre-release)](#phase-2-tools-v03x-pre-release)
-- [Phase 3: Authorization (v0.4.x)](#phase-3-authorization-v04x)
-- [Phase 4: Blog (v0.5.x) (pre-release)](#phase-4-blog-v05x-pre-release)
-- [Phase 5: Measurements (v0.6.x) (pre-release)](#phase-5-measurements-v06x-pre-release)
-- [Phase 6: Workouts (v1.x.x-beta)](#phase-6-workouts-v1xx-beta)
-- [Release: First Application Version (v1.0.0)](#release-first-application-version-v100)
-- [Future Phases](#future-phases)
-
 ## Phase 1: Foundations (v0.2.x)
 
 - [x] Environment setup (Next.js, Tailwind CSS)
