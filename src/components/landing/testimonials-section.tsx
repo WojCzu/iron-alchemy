@@ -4,35 +4,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { useEffect, useState } from "react";
 import { Testimonial } from "@/components/landing/testimonial";
+import type { Testimonial as TestimonialType } from "@/types/landing/testimonials";
 
-const testimonials = [
-	{
-		message:
-			"This app has everything I need to optimize my training. The tools, logs, and insights make it easy to see progress and adjust as I grow.",
-		authorName: "Emily",
-		authorTitle: "Amateur Powerlifter",
-	},
-	{
-		message:
-			"Finally, a powerlifting app that understands real lifters' needs! The calculators and metrics keep me focused and informed.",
-		authorName: "Carlos",
-		authorTitle: "Powerlifter",
-	},
-	{
-		message:
-			"As a coach, I love how easy it is to design and assign custom plans. Seeing my clients’ progress in real-time is a game changer.",
-		authorName: "Samatha",
-		authorTitle: "Strength Coach",
-	},
-	{
-		message:
-			"The training logs and tools have transformed my workouts. Tracking every detail helps me push my limits safely.",
-		authorName: "Liam",
-		authorTitle: "Competitive Powerlifter",
-	},
-];
+type TestimonialsSectionProps = {
+	testimonials: TestimonialType[];
+};
 
-export function TestimonialsSection() {
+export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
 	const [isClient, setIsClient] = useState(false);
 
 	useEffect(() => {
