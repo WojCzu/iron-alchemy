@@ -1,0 +1,61 @@
+{
+	"HomePage": {
+		"title": "Iron Alchemy",
+		"description": "Elevate your lifting journey with Iron Alchemy! Access comprehensive training logs, advanced tools like the One Rep Max Calculator, expert programming insights, and a trainer dashboard. Optimize your training and track progress with precision. Sign up now!",
+		"HeroSection": {
+			"title": "Craft Your Perfect Training Formula",
+			"description": "Comprehensive Training Logs, Advanced Tools, Expert Insights",
+			"button": "Sign Up Now"
+		},
+		"FeaturesSection": {
+			"title": "Unlock Your Powerlifting Toolbox!",
+			"features": [
+				{
+					"title": "Training Tips",
+					"description": "Dive into articles on training and programming. Learn how to perform manual muscle tests, understand muscle synergies and antagonists, and more."
+				},
+				{
+					"title": "Tools for Powerlifters",
+					"description": "Utilize tools like One Rep Max Calculator, DOTS Calculator, Load Drop Calculator, and more to optimize your training."
+				},
+				{
+					"title": "Training Dashboard",
+					"description": "Record your workouts and track progress through microcycles, mesocycles, and macrocycles with advanced metrics and indicators."
+				},
+				{
+					"title": "Trainer’s Corner",
+					"description": "Create, edit, and assign training plans. Monitor athletes' progress with dashboards and get alerts when intervention is needed."
+				}
+			],
+			"comingSoon": "Coming Soon"
+		},
+		"ReviewsSection": {
+			"title": "Why Lifters Love Us?"
+		},
+		"CallToActionSection": {
+			"title": "Ready to transform your training?",
+			"button": "Sign Up Now"
+		}
+	},
+	"Layout": {
+		"Navigation": {
+			"currentPage": "Current Page",
+			"skipToMainContent": "Skip to main content",
+			"closeMenu": "Close menu",
+			"openMenu": "Open menu",
+			"home": "Home",
+			"blog": "Blog",
+			"tools": "Tools",
+			"dashboard": "Dashboard"
+		}
+	},
+	"ComingSoon": {
+		"title": "Coming soon",
+		"description": "We're crafting something special for you",
+		"button": "take me back"
+	},
+	"LocaleSwitcher": {
+		"label": "Change language",
+		"locale": "{locale, select, pl {Polski} en {English} other {Unknown}}"
+	}
+}
