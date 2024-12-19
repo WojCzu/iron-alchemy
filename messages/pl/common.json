@@ -1,0 +1,27 @@
+{
+	"Common": {
+		"Meta": {
+			"brand": "Iron Alchemy"
+		},
+		"Navigation": {
+			"currentPage": "Aktualna Strona",
+			"skipToMainContent": "Przejdź do głównej treści",
+			"closeMenu": "Zamknij menu",
+			"openMenu": "Otwórz menu",
+			"menuItems": {
+				"home": "Strona główna",
+				"blog": "Blog",
+				"tools": "Narzędzia",
+				"dashboard": "Panel"
+			}
+		},
+		"LocaleSwitcher": {
+			"label": "Zmień język",
+			"locale": "{locale, select, pl {Polski} en {English} other {Unknown}}"
+		},
+		"Button": {
+			"cta": "Zarejestruj się",
+			"back": "Zabierz mnie z powrotem"
+		}
+	}
+}

@@ -16,7 +16,7 @@ export function MenuHeader() {
 	const [isOpen, setIsOpen] = useState(false);
 	const isDesktop = useIsDesktop();
 	const linkTabIndex = isOpen || isDesktop ? 0 : -1;
-	const t = useTranslations("Navigation");
+	const t = useTranslations("Common.Navigation");
 
 	useFocusTrap(isOpen, menuRef, btnRef, handleCloseMenu);
 	useClickOutside(menuRef, () => setIsOpen(false));

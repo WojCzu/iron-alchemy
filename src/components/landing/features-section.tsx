@@ -2,7 +2,8 @@ import { useTranslations } from "next-intl";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/common/Card";
 
 export function FeaturesSection() {
-	const t = useTranslations("FeaturesSection");
+	const t = useTranslations("HomePage.FeaturesSection");
+
 	return (
 		<section className="section-spacing container" aria-labelledby="features">
 			<h2 className="section-title" id="features">

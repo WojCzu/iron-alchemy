@@ -7,7 +7,7 @@ import { Logo } from "@/components/layout/logo";
 export function LogoLink() {
 	const pathname = usePathname();
 	const isActive = pathname === "/";
-	const t = useTranslations("Navigation");
+	const t = useTranslations("Common.Navigation");
 
 	return isActive ? (
 		<span aria-current={"page"} aria-label={t("menuItems.home")}>

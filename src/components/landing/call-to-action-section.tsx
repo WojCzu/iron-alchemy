@@ -2,8 +2,8 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/common/Button";
 
 export function CallToActionSection() {
-	const t = useTranslations("CallToAction");
-	const tBtn = useTranslations("Button");
+	const t = useTranslations("HomePage.CallToAction");
+	const tBtn = useTranslations("Common.Button");
 
 	return (
 		<section className="section-spacing container" aria-labelledby="call-to-action">

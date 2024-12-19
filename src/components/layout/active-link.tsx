@@ -13,7 +13,7 @@ type ActiveLinkProps = {
 };
 
 export function ActiveLink({ children, href, tabIndex = 0, exact = false }: ActiveLinkProps) {
-	const t = useTranslations("Navigation");
+	const t = useTranslations("Common.Navigation");
 	const pathname = usePathname();
 	const isActive = exact ? pathname === href : pathname.includes(href as string);
 

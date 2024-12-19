@@ -3,8 +3,9 @@ import { Button } from "@/components/common/Button";
 import { HeroImage } from "@/components/landing/hero-image";
 
 export function HeroSection() {
-	const t = useTranslations("HeroSection");
-	const tBtn = useTranslations("Button");
+	const t = useTranslations("HomePage.HeroSection");
+	const tBtn = useTranslations("Common.Button");
+
 	return (
 		<section className="h-dvh px-8" aria-labelledby="hero-section">
 			<HeroImage />

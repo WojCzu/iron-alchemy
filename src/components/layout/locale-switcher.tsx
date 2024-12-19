@@ -7,7 +7,7 @@ import { SelectItem } from "@/components/common/Select";
 
 export function LocaleSwitcher() {
 	const currentLocale = useLocale();
-	const t = useTranslations("LocaleSwitcher");
+	const t = useTranslations("Common.LocaleSwitcher");
 
 	return (
 		<LocaleSwitcherSelect defaultValue={currentLocale} label={t("label")}>
