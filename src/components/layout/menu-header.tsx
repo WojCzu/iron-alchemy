@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { AlignCenter, X } from "lucide-react";
 import clsx from "clsx";
+import { useTranslations } from "next-intl";
 import { ActiveLink } from "@/components/layout/active-link";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { useClickOutside } from "@/hooks/useClickOutside";
@@ -15,6 +16,7 @@ export function MenuHeader() {
 	const [isOpen, setIsOpen] = useState(false);
 	const isDesktop = useIsDesktop();
 	const linkTabIndex = isOpen || isDesktop ? 0 : -1;
+	const t = useTranslations("Common.Navigation");
 
 	useFocusTrap(isOpen, menuRef, btnRef, handleCloseMenu);
 	useClickOutside(menuRef, () => setIsOpen(false));
@@ -36,7 +38,7 @@ export function MenuHeader() {
 				ref={btnRef}
 			>
 				{isOpen ? <X /> : <AlignCenter />}
-				<span className="sr-only">{isOpen ? "Close menu" : "Open menu"}</span>
+				<span className="sr-only">{isOpen ? t("closeMenu") : t("openMenu")}</span>
 			</button>
 
 			<ul
@@ -51,22 +53,22 @@ export function MenuHeader() {
 			>
 				<li className="sm:hidden">
 					<ActiveLink exact href="/" tabIndex={linkTabIndex}>
-						Home
+						{t("menuItems.home")}
 					</ActiveLink>
 				</li>
 				<li>
 					<ActiveLink tabIndex={linkTabIndex} href="/blog">
-						Blog
+						{t("menuItems.blog")}
 					</ActiveLink>
 				</li>
 				<li>
 					<ActiveLink tabIndex={linkTabIndex} href="/tools">
-						Tools
+						{t("menuItems.tools")}
 					</ActiveLink>
 				</li>
 				<li>
 					<ActiveLink tabIndex={linkTabIndex} href="/dashboard">
-						Dashboard
+						{t("menuItems.dashboard")}
 					</ActiveLink>
 				</li>
 			</ul>

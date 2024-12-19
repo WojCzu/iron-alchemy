@@ -1,13 +1,12 @@
 import * as React from "react";
-import Link from "next/link";
-import { type Route } from "next";
+import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
-type CardProps<T extends string> =
+type CardProps =
 	| (React.HTMLAttributes<HTMLDivElement> & { href?: never })
-	| (React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: Route<T> });
+	| (React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: Parameters<typeof Link>[0]["href"] });
 
-const Card = React.forwardRef<HTMLAnchorElement | HTMLDivElement, CardProps<string>>(
+const Card = React.forwardRef<HTMLAnchorElement | HTMLDivElement, CardProps>(
 	({ className, href, ...props }, ref) => {
 		if (href) {
 			return (

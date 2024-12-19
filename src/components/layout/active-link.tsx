@@ -1,33 +1,28 @@
 "use client";
 
-import Link from "next/link";
 import { type ReactNode } from "react";
-import { usePathname } from "next/navigation";
-import { type Route } from "next";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/routing";
 
-type ActiveLinkProps<T extends string> = {
-	href: Route<T>;
+type ActiveLinkProps = {
+	href: Parameters<typeof Link>[0]["href"];
 	children: ReactNode;
 	exact?: boolean;
 	tabIndex?: number;
 	className?: string;
 };
 
-export function ActiveLink<T extends string>({
-	children,
-	href,
-	tabIndex = 0,
-	exact = false,
-}: ActiveLinkProps<T>) {
+export function ActiveLink({ children, href, tabIndex = 0, exact = false }: ActiveLinkProps) {
+	const t = useTranslations("Common.Navigation");
 	const pathname = usePathname();
-	const isActive = exact ? pathname === href : pathname.includes(href);
+	const isActive = exact ? pathname === href : pathname.includes(href as string);
 
 	return isActive ? (
 		<span
 			aria-current={"page"}
 			className="block border-b-4 border-primary px-2 py-4 font-semibold lowercase text-foreground"
 		>
-			{children} <span className="sr-only">(current page)</span>
+			{children} <span className="sr-only">{t("currentPage")}</span>
 		</span>
 	) : (
 		<Link

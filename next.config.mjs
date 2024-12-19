@@ -1,9 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-	experimental: {
-		typedRoutes: true,
-	},
-	output: 'standalone',
-};
+import createNextIntlPlugin from "next-intl/plugin";
 
-export default nextConfig;
+/** @type {import('next').NextConfig} */
+
+const withNextIntl = createNextIntlPlugin();
+
+const nextConfig = {};
+
+export default withNextIntl(nextConfig);
