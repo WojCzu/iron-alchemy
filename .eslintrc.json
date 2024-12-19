@@ -83,11 +83,16 @@
 	},
 	"overrides": [
 		{
-			"files": ["src/app/**/*.ts?(x)", "middleware.ts", "*.config.{js,ts,mjs}"],
+			"files": [
+				"src/app/**/*.ts?(x)",
+				"middleware.ts",
+				"*.config.{js,ts,mjs}",
+				"src/i18n/request.ts"
+			],
 			"rules": {
 				"import/no-default-export": "off"
 			}
 		}
 	],
-	"ignorePatterns": ["*.js", "*.jsx"]
+	"ignorePatterns": ["*.js", "*.jsx", "*.mjs"]
 }
