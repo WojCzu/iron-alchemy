@@ -16,7 +16,7 @@ export function MenuHeader() {
 	const [isOpen, setIsOpen] = useState(false);
 	const isDesktop = useIsDesktop();
 	const linkTabIndex = isOpen || isDesktop ? 0 : -1;
-	const t = useTranslations("Layout.Navigation");
+	const t = useTranslations("Navigation");
 
 	useFocusTrap(isOpen, menuRef, btnRef, handleCloseMenu);
 	useClickOutside(menuRef, () => setIsOpen(false));
@@ -53,22 +53,22 @@ export function MenuHeader() {
 			>
 				<li className="sm:hidden">
 					<ActiveLink exact href="/" tabIndex={linkTabIndex}>
-						{t("home")}
+						{t("menuItems.home")}
 					</ActiveLink>
 				</li>
 				<li>
 					<ActiveLink tabIndex={linkTabIndex} href="/blog">
-						{t("blog")}
+						{t("menuItems.blog")}
 					</ActiveLink>
 				</li>
 				<li>
 					<ActiveLink tabIndex={linkTabIndex} href="/tools">
-						{t("tools")}
+						{t("menuItems.tools")}
 					</ActiveLink>
 				</li>
 				<li>
 					<ActiveLink tabIndex={linkTabIndex} href="/dashboard">
-						{t("dashboard")}
+						{t("menuItems.dashboard")}
 					</ActiveLink>
 				</li>
 			</ul>

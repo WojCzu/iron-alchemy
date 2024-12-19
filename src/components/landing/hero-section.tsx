@@ -3,7 +3,8 @@ import { Button } from "@/components/common/Button";
 import { HeroImage } from "@/components/landing/hero-image";
 
 export function HeroSection() {
-	const t = useTranslations("HomePage.HeroSection");
+	const t = useTranslations("HeroSection");
+	const tBtn = useTranslations("Button");
 	return (
 		<section className="h-dvh px-8" aria-labelledby="hero-section">
 			<HeroImage />
@@ -16,7 +17,7 @@ export function HeroSection() {
 						<p className="text-2xl md:text-3xl lg:text-4xl">{t("description")}</p>
 					</hgroup>
 					<Button size={"lg"} variant={"cta"}>
-						{t("button")}
+						{tBtn("cta")}
 					</Button>
 				</div>
 			</div>

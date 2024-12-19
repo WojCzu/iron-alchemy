@@ -12,7 +12,7 @@ import "@/styles/globals.css";
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export async function generateMetadata() {
-	const t = await getTranslations("HomePage");
+	const t = await getTranslations("HomePage.meta");
 	return {
 		title: t("title"),
 		description: t("description"),

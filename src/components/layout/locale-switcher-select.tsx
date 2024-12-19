@@ -6,13 +6,13 @@ import { Globe } from "lucide-react";
 import { type Locale, usePathname, useRouter } from "@/i18n/routing";
 import { Select, SelectContent, SelectTrigger } from "@/components/common/Select";
 
-type Props = {
+type LocaleSwitcherSelectProps = {
 	children: ReactNode;
 	defaultValue: string;
 	label: string;
 };
 
-export function LocaleSwitcherSelect({ children, defaultValue, label }: Props) {
+export function LocaleSwitcherSelect({ children, defaultValue, label }: LocaleSwitcherSelectProps) {
 	const router = useRouter();
 	const [isPending, startTransition] = useTransition();
 	const pathname = usePathname();

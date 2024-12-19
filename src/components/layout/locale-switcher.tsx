@@ -6,14 +6,14 @@ import { LocaleSwitcherSelect } from "@/components/layout/locale-switcher-select
 import { SelectItem } from "@/components/common/Select";
 
 export function LocaleSwitcher() {
-	const locale = useLocale();
+	const currentLocale = useLocale();
 	const t = useTranslations("LocaleSwitcher");
 
 	return (
-		<LocaleSwitcherSelect defaultValue={locale} label={t("label")}>
-			{routing.locales.map((cur) => (
-				<SelectItem key={cur} value={cur} className="cursor-pointer">
-					{t("locale", { locale: cur })}
+		<LocaleSwitcherSelect defaultValue={currentLocale} label={t("label")}>
+			{routing.locales.map((locale) => (
+				<SelectItem key={locale} value={locale} className="cursor-pointer">
+					{t("locale", { locale })}
 				</SelectItem>
 			))}
 		</LocaleSwitcherSelect>

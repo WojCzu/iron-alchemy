@@ -7,16 +7,16 @@ import { Logo } from "@/components/layout/logo";
 export function LogoLink() {
 	const pathname = usePathname();
 	const isActive = pathname === "/";
-	const t = useTranslations("Layout.Navigation");
+	const t = useTranslations("Navigation");
 
 	return isActive ? (
-		<span aria-current={"page"} aria-label={t("home")}>
+		<span aria-current={"page"} aria-label={t("menuItems.home")}>
 			<Logo />
 			<span className="sr-only">{t("currentPage")}</span>
 		</span>
 	) : (
 		<div>
-			<Link href="/" aria-label={t("home")}>
+			<Link href="/" aria-label={t("menuItems.home")}>
 				<Logo />
 			</Link>
 		</div>

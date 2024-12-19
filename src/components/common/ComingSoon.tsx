@@ -4,6 +4,7 @@ import { AnimatedBackground } from "@/components/layout/animated-background";
 
 export function ComingSoon() {
 	const t = useTranslations("ComingSoon");
+	const tBtn = useTranslations("Button");
 
 	return (
 		<div className="flex h-full w-full items-center justify-center overflow-hidden p-12 sm:p-20 md:p-24 lg:p-32">
@@ -14,7 +15,7 @@ export function ComingSoon() {
 					<p className="text-2xl md:text-3xl lg:text-4xl">{t("description")}</p>
 				</hgroup>
 				<ActiveLink exact href="/">
-					← {t("button")}
+					← {tBtn("back")}
 				</ActiveLink>
 			</div>
 		</div>

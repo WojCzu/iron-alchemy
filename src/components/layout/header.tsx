@@ -4,7 +4,7 @@ import { LogoLink } from "@/components/layout/logo-link";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 
 export function Header() {
-	const t = useTranslations("Layout.Navigation");
+	const t = useTranslations("Navigation");
 
 	return (
 		<header className="relative">

@@ -4,7 +4,7 @@ import { getReviews } from "@/lib/landing/reviews";
 
 export async function ReviewsSection() {
 	const reviews = await getReviews();
-	const t = await getTranslations("HomePage.ReviewsSection");
+	const t = await getTranslations("ReviewsSection");
 
 	return (
 		<section className="section-spacing container" aria-labelledby="reviews">
