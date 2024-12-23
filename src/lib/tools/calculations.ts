@@ -1,4 +1,4 @@
-import { RPE_TABLE } from "@/lib/tools/constants";
+import { FEMALE_DOTS_COEFFICIENTS, MALE_DOTS_COEFFICIENTS, RPE_TABLE } from "@/lib/tools/constants";
 
 type CalculateE1RMParams = {
 	weight: number;
@@ -50,4 +50,33 @@ export const calculateLoadDrop = ({
 	const result = estimatedE1RM * repsInit * repsDiff * setsModifier;
 
 	return Math.round(Math.floor(result / round) * round * 100) / 100;
+};
+
+type CalculateDotsParams = {
+	gender: "male" | "female";
+	units: "kg" | "lbs";
+	bodyWeight: number;
+	liftedWeight: number;
+};
+
+export const calculateDots = ({
+	gender,
+	units,
+	bodyWeight,
+	liftedWeight,
+}: CalculateDotsParams): number => {
+	const bodyWeightKg = units === "kg" ? bodyWeight : bodyWeight * 0.45359237;
+	const liftedWeightKg = units === "kg" ? liftedWeight : liftedWeight * 0.45359237;
+	const dotsCoefficients = gender === "male" ? MALE_DOTS_COEFFICIENTS : FEMALE_DOTS_COEFFICIENTS;
+
+	const denominator =
+		dotsCoefficients.A * Math.pow(bodyWeightKg, 4) +
+		dotsCoefficients.B * Math.pow(bodyWeightKg, 3) +
+		dotsCoefficients.C * Math.pow(bodyWeightKg, 2) +
+		dotsCoefficients.D * bodyWeightKg +
+		dotsCoefficients.E;
+
+	const dotsPoints = (liftedWeightKg * 500) / denominator;
+
+	return Math.round(dotsPoints * 100) / 100;
 };

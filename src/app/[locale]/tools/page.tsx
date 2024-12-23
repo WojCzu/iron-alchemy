@@ -25,6 +25,9 @@ export default function ToolsPage() {
 						{t("loadDrop")}
 					</Link>
 				</li>
+				<li>
+					<Link href={{ pathname: "/tools/[tool]", params: { tool: "dots" } }}>{t("dots")}</Link>
+				</li>
 			</ul>
 		</div>
 	);

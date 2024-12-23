@@ -106,6 +106,40 @@
 			"Meta": {
 				"title": "DOTS Calculator - Iron Alchemy",
 				"description": "Calculate your DOTS score to compare strength levels across different weight classes. Perfect for competition preparation and progress tracking."
+			},
+			"Page": {
+				"title": "DOTS Calculator"
+			},
+			"Form": {
+				"title": "DOTS Calculator",
+				"description": "Calculate your DOTS score to compare strength levels across different weight classes.",
+
+				"labels": {
+					"gender": "Gender",
+					"male": "Male",
+					"female": "Female",
+					"units": "Units",
+					"kg": "Kilograms (kg)",
+					"lbs": "Pounds (lbs)",
+					"bodyWeight": "Body Weight",
+					"liftedWeight": "Lifted Weight",
+					"submit": "Calculate"
+				},
+				"errors": {
+					"bodyWeight": {
+						"required": "Please enter your body weight",
+						"positive": "Body weight cannot be zero or negative"
+					},
+					"liftedWeight": {
+						"required": "Please enter the weight you lifted",
+						"positive": "Lifted weight cannot be zero or negative"
+					}
+				},
+				"result": {
+					"dots": "DOTS Score",
+					"explanation": "This is the DOTS score based on your data",
+					"fillAllFields": "Fill in all fields to calculate your DOTS score"
+				}
 			}
 		}
 	}

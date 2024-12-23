@@ -25,6 +25,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Label } from "@/components/common/Label";
 import { Input } from "@/components/common/Input";
+import { RadioGroup, RadioGroupItem } from "@/components/common/RadioGroup";
 
 const Form = FormProvider;
 
@@ -205,6 +206,53 @@ const FormNumericField = <T extends FieldValues>({
 };
 FormNumericField.displayName = "FormNumericField";
 
+const FormRadioGroupField = <T extends FieldValues>({
+	name,
+	label,
+	control,
+	options,
+	className,
+}: {
+	name: Path<T>;
+	label: string;
+	control: Control<T>;
+	options: {
+		value: string;
+		label: string;
+	}[];
+	className?: string;
+}) => {
+	return (
+		<FormField
+			control={control}
+			name={name}
+			render={({ field }) => (
+				<FormItem className={cn("space-y-3", className)}>
+					<FormLabel>{label}</FormLabel>
+					<FormControl>
+						<RadioGroup
+							onValueChange={field.onChange}
+							defaultValue={field.value}
+							className="flex flex-col space-y-1"
+						>
+							{options.map((option) => (
+								<FormItem key={option.value} className="flex items-center space-x-3 space-y-0">
+									<FormControl>
+										<RadioGroupItem value={option.value} />
+									</FormControl>
+									<FormLabel className="font-normal">{option.label}</FormLabel>
+								</FormItem>
+							))}
+						</RadioGroup>
+					</FormControl>
+					<FormMessage />
+				</FormItem>
+			)}
+		/>
+	);
+};
+FormRadioGroupField.displayName = "FormRadioGroupField";
+
 export {
 	useFormField,
 	Form,
@@ -215,4 +263,5 @@ export {
 	FormMessage,
 	FormField,
 	FormNumericField,
+	FormRadioGroupField,
 };
