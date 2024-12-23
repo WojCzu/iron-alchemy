@@ -8,6 +8,8 @@ type CalculateE1RMParams = {
 };
 
 export const calculateE1RM = ({ weight, reps, rpe = 10, round }: CalculateE1RMParams): number => {
+	if (reps === 1 && rpe === 10) return weight;
+
 	const rpeRow = RPE_TABLE[rpe as keyof typeof RPE_TABLE];
 	if (!rpeRow) return 0;
 
@@ -15,7 +17,7 @@ export const calculateE1RM = ({ weight, reps, rpe = 10, round }: CalculateE1RMPa
 	if (!percentage) return 0;
 
 	const result = weight / percentage;
-	return round ? Math.floor(result / round) * round : result;
+	return round ? Math.round(Math.floor(result / round) * round * 100) / 100 : result;
 };
 
 type CalculateLoadDropParams = {
@@ -47,5 +49,5 @@ export const calculateLoadDrop = ({
 
 	const result = estimatedE1RM * repsInit * repsDiff * setsModifier;
 
-	return Math.floor(result / round) * round;
+	return Math.round(Math.floor(result / round) * round * 100) / 100;
 };

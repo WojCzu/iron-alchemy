@@ -16,6 +16,11 @@ export default function ToolsPage() {
 		<div>
 			<ul>
 				<li>
+					<Link href={{ pathname: "/tools/[tool]", params: { tool: "one-rep-max" } }}>
+						{t("oneRepMax")}
+					</Link>
+				</li>
+				<li>
 					<Link href={{ pathname: "/tools/[tool]", params: { tool: "load-drop" } }}>
 						{t("loadDrop")}
 					</Link>

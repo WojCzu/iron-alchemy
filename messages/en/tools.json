@@ -65,7 +65,41 @@
 		"OneRepMax": {
 			"Meta": {
 				"title": "One Rep Max Calculator - Iron Alchemy",
-				"description": "Calculate your estimated one rep max based on your working sets. Essential tool for strength programming and progress tracking."
+				"description": "Calculate your estimated one rep max based on your best working set. Essential tool for strength programming and progress tracking."
+			},
+			"Page": {
+				"title": "One Rep Max Calculator"
+			},
+			"Form": {
+				"title": "One Rep Max Calculator",
+				"description": "Calculate your estimated one rep max based on your best working set.",
+				"labels": {
+					"reps": "Reps",
+					"rpe": "RPE",
+					"weight": "Weight (kg)",
+					"submit": "Calculate"
+				},
+				"errors": {
+					"weight": {
+						"required": "Please enter the weight",
+						"positive": "Weight cannot be zero or negative"
+					},
+					"reps": {
+						"required": "Please enter the number of reps",
+						"min": "At least 1 rep is required",
+						"max": "Maximum 12 reps allowed"
+					},
+					"rpe": {
+						"required": "Please enter the RPE value",
+						"min": "RPE must be at least 4",
+						"max": "RPE cannot be higher than 10"
+					}
+				},
+				"result": {
+					"oneRepMax": "One Rep Max",
+					"explanation": "This is the estimated one rep max based on your data",
+					"fillAllFields": "Fill in all fields to calculate your one rep max"
+				}
 			}
 		},
 		"Dots": {
