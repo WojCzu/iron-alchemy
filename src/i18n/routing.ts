@@ -15,6 +15,11 @@ export const routing = defineRouting({
 			en: "/tools",
 			pl: "/narzedzia",
 		},
+		"/tools/[tool]": {
+			en: "/tools/[tool]",
+			pl: "/narzedzia/[tool]",
+		},
+
 		"/trainer": {
 			en: "/trainer",
 			pl: "/trener",
