@@ -3,8 +3,9 @@
 import { useParams } from "next/navigation";
 import { type ReactNode, useTransition } from "react";
 import { Globe } from "lucide-react";
-import { type Locale, usePathname, useRouter } from "@/i18n/routing";
+import { type Locale, useRouter } from "@/i18n/routing";
 import { Select, SelectContent, SelectTrigger } from "@/components/common/Select";
+import { useDynamicPathname } from "@/hooks/useDynamicPathname";
 
 type LocaleSwitcherSelectProps = {
 	children: ReactNode;
@@ -15,8 +16,8 @@ type LocaleSwitcherSelectProps = {
 export function LocaleSwitcherSelect({ children, defaultValue, label }: LocaleSwitcherSelectProps) {
 	const router = useRouter();
 	const [isPending, startTransition] = useTransition();
-	const pathname = usePathname();
 	const params = useParams();
+	const pathname = useDynamicPathname();
 
 	function onSelectChange(nextLocale: Locale) {
 		startTransition(() => {

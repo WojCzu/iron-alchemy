@@ -1,0 +1,78 @@
+{
+	"Tools": {
+		"Meta": {
+			"title": "Narzędzia Treningowe - Iron Alchemy",
+			"description": "Skorzystaj z naszych specjalistycznych kalkulatorów do treningu siłowego i trójboju"
+		},
+		"Navigation": {
+			"loadDrop": "Kalkulator Zmniejszenia Ciężaru",
+			"oneRepMax": "Kalkulator Maksymalnego Ciężaru",
+			"dots": "Kalkulator DOTS"
+		},
+		"LoadDrop": {
+			"Meta": {
+				"title": "Kalkulator Zmniejszenia Ciężaru - Iron Alchemy",
+				"description": "Oblicz optymalne ciężary dla twoich serii backoff na podstawie głównych serii treningowych. Idealne narzędzie do planowania objętości treningu i ćwiczeń uzupełniających."
+			},
+			"Page": {
+				"title": "Kalkulator Zmniejszenia Ciężaru"
+			},
+			"Form": {
+				"instructions": "Wprowadź wszystkie dane dla serii głównej oraz planowane dane dla serii backoff",
+				"labels": {
+					"sets": "Serie",
+					"reps": "Powtórzenia",
+					"rpe": "RPE",
+					"weight": "Ciężar (kg)"
+				},
+				"errors": {
+					"weight": {
+						"required": "Wprowadź ciężar",
+						"positive": "Ciężar nie może być zerowy ani ujemny"
+					},
+					"reps": {
+						"required": "Wprowadź liczbę powtórzeń",
+						"min": "Wymagane jest minimum 1 powtórzenie",
+						"max": "Maksymalnie dozwolone jest 12 powtórzeń"
+					},
+					"sets": {
+						"required": "Wprowadź liczbę serii",
+						"min": "Wymagana jest minimum 1 seria"
+					},
+					"rpe": {
+						"required": "Wprowadź wartość RPE",
+						"min": "RPE musi wynosić co najmniej 4",
+						"max": "RPE nie może być wyższe niż 10"
+					}
+				},
+				"sections": {
+					"mainSet": {
+						"title": "Seria Główna",
+						"description": "Wprowadź szczegóły twojej głównej serii treningowej"
+					},
+					"backoffSet": {
+						"title": "Seria Backoff",
+						"description": "Wprowadź docelową liczbę powtórzeń i RPE dla serii backoff"
+					}
+				},
+				"result": {
+					"fillAllFields": "Wypełnij wszystkie pola, aby obliczyć ciężar dla serii backoff",
+					"backoffWeight": "Ciężar Serii Backoff",
+					"explanation": "To zalecany ciężar dla twoich serii backoff bazujący na wynikach serii głównej"
+				}
+			}
+		},
+		"OneRepMax": {
+			"Meta": {
+				"title": "Kalkulator Maksymalnego Ciężaru - Iron Alchemy",
+				"description": "Oblicz szacunkowy maksymalny ciężar na podstawie twoich serii treningowych. Niezbędne narzędzie do programowania treningu siłowego i śledzenia postępów."
+			}
+		},
+		"Dots": {
+			"Meta": {
+				"title": "Kalkulator DOTS - Iron Alchemy",
+				"description": "Oblicz swój wynik DOTS, aby porównać poziom siły między różnymi kategoriami wagowymi. Idealne narzędzie do przygotowania do zawodów i śledzenia postępów."
+			}
+		}
+	}
+}
