@@ -8,21 +8,30 @@ const createLoadDropSchema = (t: (key: string) => string) => {
 			schema.min(1, { message: t("errors.weight.positive") }),
 		),
 		reps: requiredNumber(t("errors.reps.required"), (schema) =>
-			schema.min(1, { message: t("errors.reps.min") }).max(12, { message: t("errors.reps.max") }),
+			schema
+				.min(1, { message: t("errors.reps.min") })
+				.max(12, { message: t("errors.reps.max") })
+				.int({ message: "errors.reps.integer" }),
 		),
 		rpe: requiredNumber(t("errors.rpe.required"), (schema) =>
-			schema.min(4, { message: t("errors.rpe.min") }).max(10, { message: t("errors.rpe.max") }),
+			schema
+				.min(4, { message: t("errors.rpe.min") })
+				.max(10, { message: t("errors.rpe.max") })
+				.step(0.5, { message: "errors.rpe.step" }),
 		),
 	});
 	const backoffSetSchema = z.object({
 		reps: requiredNumber(t("errors.reps.required"), (schema) =>
-			schema.min(1, { message: t("errors.reps.min") }),
+			schema.min(1, { message: t("errors.reps.min") }).int({ message: t("errors.reps.integer") }),
 		),
 		sets: requiredNumber(t("errors.sets.required"), (schema) =>
-			schema.min(1, { message: t("errors.sets.min") }),
+			schema.min(1, { message: t("errors.sets.min") }).int({ message: t("errors.sets.integer") }),
 		),
 		rpe: requiredNumber(t("errors.rpe.required"), (schema) =>
-			schema.min(4, { message: t("errors.rpe.min") }).max(10, { message: t("errors.rpe.max") }),
+			schema
+				.min(4, { message: t("errors.rpe.min") })
+				.max(10, { message: t("errors.rpe.max") })
+				.step(0.5, { message: "errors.rpe.step" }),
 		),
 	});
 	return z.object({

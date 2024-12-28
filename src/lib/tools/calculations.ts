@@ -8,6 +8,8 @@ type CalculateE1RMParams = {
 };
 
 export const calculateE1RM = ({ weight, reps, rpe = 10, round }: CalculateE1RMParams): number => {
+	if (rpe < 4 || rpe > 10 || (rpe * 10) % 5 !== 0) return 0;
+	if (!Number.isInteger(reps) || reps < 1 || reps > 12) return 0;
 	if (reps === 1 && rpe === 10) return weight;
 
 	const rpeRow = RPE_TABLE[rpe as keyof typeof RPE_TABLE];

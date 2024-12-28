@@ -8,10 +8,16 @@ const createOneRepMaxSchema = (t: (key: string) => string) => {
 			schema.min(1, { message: t("errors.weight.positive") }),
 		),
 		reps: requiredNumber(t("errors.reps.required"), (schema) =>
-			schema.min(1, { message: t("errors.reps.min") }).max(12, { message: t("errors.reps.max") }),
+			schema
+				.min(1, { message: t("errors.reps.min") })
+				.max(12, { message: t("errors.reps.max") })
+				.int({ message: t("errors.reps.integer") }),
 		),
 		rpe: requiredNumber(t("errors.rpe.required"), (schema) =>
-			schema.min(4, { message: t("errors.rpe.min") }).max(10, { message: t("errors.rpe.max") }),
+			schema
+				.min(4, { message: t("errors.rpe.min") })
+				.max(10, { message: t("errors.rpe.max") })
+				.step(0.5, { message: t("errors.rpe.step") }),
 		),
 	});
 };

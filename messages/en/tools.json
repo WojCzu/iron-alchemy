@@ -33,16 +33,19 @@
 					"reps": {
 						"required": "Please enter the number of reps",
 						"min": "At least 1 rep is required",
-						"max": "Maximum 12 reps allowed"
+						"max": "Maximum 12 reps allowed",
+						"integer": "Please enter a whole number of reps"
 					},
 					"sets": {
 						"required": "Please enter the number of sets",
-						"min": "At least 1 set is required"
+						"min": "At least 1 set is required",
+						"integer": "Please enter a whole number of sets"
 					},
 					"rpe": {
 						"required": "Please enter the RPE value",
 						"min": "RPE must be at least 4",
-						"max": "RPE cannot be higher than 10"
+						"max": "RPE cannot be higher than 10",
+						"step": "RPE must be a multiple of 0.5"
 					}
 				},
 				"sections": {
@@ -87,12 +90,14 @@
 					"reps": {
 						"required": "Please enter the number of reps",
 						"min": "At least 1 rep is required",
-						"max": "Maximum 12 reps allowed"
+						"max": "Maximum 12 reps allowed",
+						"integer": "Please enter a whole number of reps"
 					},
 					"rpe": {
 						"required": "Please enter the RPE value",
 						"min": "RPE must be at least 4",
-						"max": "RPE cannot be higher than 10"
+						"max": "RPE cannot be higher than 10",
+						"step": "RPE must be a multiple of 0.5"
 					}
 				},
 				"result": {
