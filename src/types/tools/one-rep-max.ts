@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { type SchemaConfig } from "@/hooks/useTranslatedSchema";
 import { requiredNumber } from "@/types/utils";
+import { type E1RMMethod, e1rmStrategies } from "@/lib/tools/e1rm-strategies";
 
 const createOneRepMaxSchema = (t: (key: string) => string) => {
 	return z.object({
@@ -19,6 +20,7 @@ const createOneRepMaxSchema = (t: (key: string) => string) => {
 				.max(10, { message: t("errors.rpe.max") })
 				.step(0.5, { message: t("errors.rpe.step") }),
 		),
+		method: z.enum(Object.keys(e1rmStrategies) as [E1RMMethod, ...E1RMMethod[]]),
 	});
 };
 

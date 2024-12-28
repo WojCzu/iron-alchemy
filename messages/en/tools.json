@@ -80,7 +80,11 @@
 					"reps": "Reps",
 					"rpe": "RPE",
 					"weight": "Weight (kg)",
-					"submit": "Calculate"
+					"submit": "Calculate",
+					"method": {
+						"label": "Select calculation method",
+						"methods": "{method, select, epley {Epley} brzycki {Brzycki} landers {Landers} rpeChart {RPE Chart} other {Unknown}}"
+					}
 				},
 				"errors": {
 					"weight": {
