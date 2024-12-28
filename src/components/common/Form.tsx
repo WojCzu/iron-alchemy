@@ -200,7 +200,7 @@ const FormNumericField = <T extends FieldValues>({
 							max={max}
 							value={value ?? ""}
 							onChange={(e) => {
-								const value = e.target.value === "" ? "" : parseFloat(e.target.value);
+								const value = e.target.value === "" ? undefined : parseFloat(e.target.value);
 								onChange(value);
 							}}
 						/>
