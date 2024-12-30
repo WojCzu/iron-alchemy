@@ -6,8 +6,11 @@
 		},
 		"Navigation": {
 			"loadDrop": "Load Drop Calculator",
+			"loadDropDescription": "Calculate optimal weights for your backoff sets based on your main working sets. Perfect for planning volume work and accessory movements.",
 			"oneRepMax": "One Rep Max Calculator",
-			"dots": "DOTS Calculator"
+			"oneRepMaxDescription": "Calculate your estimated one rep max based on your best working set. Essential tool for strength programming and progress tracking.",
+			"dots": "DOTS Calculator",
+			"dotsDescription": "Calculate your DOTS score to compare strength levels across different weight classes. Perfect for competition preparation and progress tracking."
 		},
 		"LoadDrop": {
 			"Meta": {

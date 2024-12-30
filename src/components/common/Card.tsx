@@ -4,14 +4,14 @@ import { cn } from "@/lib/utils";
 
 type CardProps =
 	| (React.HTMLAttributes<HTMLDivElement> & { href?: never })
-	| (React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: Parameters<typeof Link>[0]["href"] });
+	| Parameters<typeof Link>[0];
 
 const Card = React.forwardRef<HTMLAnchorElement | HTMLDivElement, CardProps>(
 	({ className, href, ...props }, ref) => {
 		if (href) {
 			return (
 				<Link
-					{...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+					{...(props as Parameters<typeof Link>[0])}
 					href={href}
 					ref={ref as React.Ref<HTMLAnchorElement>}
 					className={cn(
