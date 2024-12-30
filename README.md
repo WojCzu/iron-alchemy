@@ -51,6 +51,24 @@ Iron Alchemy is a comprehensive web application designed for powerlifting enthus
 - **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 
+## Environment Setup
+
+### Prerequisites
+
+- Node.js (v18.17 or higher)
+- pnpm (v8.0 or higher)
+
+### Environment Variables
+
+Copy `.env.example` to create your environment files:
+
+```bash
+cp .env.example .env.development
+cp .env.example .env.production
+```
+
+Update the variables in each file according to your environment needs.
+
 ## Project Structure
 
 The project follows a modern Next.js 14 App Router structure:
