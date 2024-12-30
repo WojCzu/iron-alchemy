@@ -1,5 +1,5 @@
-import { reviewSchema, type Review } from "@/types/landing/reviews";
 import { getLocale } from "next-intl/server";
+import { reviewSchema, type Review } from "@/types/landing/reviews";
 
 export async function getReviews(): Promise<Review[]> {
 	const locale = await getLocale();
