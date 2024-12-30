@@ -247,7 +247,7 @@ const FormRadioGroupField = <T extends FieldValues>({
 									<FormControl>
 										<RadioGroupItem value={option.value} />
 									</FormControl>
-									<FormLabel className="font-normal">{option.label}</FormLabel>
+									<FormLabel className="cursor-pointer font-normal">{option.label}</FormLabel>
 								</FormItem>
 							))}
 						</RadioGroup>
