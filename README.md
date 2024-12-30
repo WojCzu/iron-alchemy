@@ -128,9 +128,9 @@ ci: add cascade automation
 
 ## Phase 2: Tools (v0.3.x) (pre-release)
 
-- [ ] Load Drop Calculator
-- [ ] One Rep Max Calculator
-- [ ] DOTS Calculator
+- [x] Load Drop Calculator
+- [x] One Rep Max Calculator
+- [x] DOTS Calculator
 
 ## Phase 3: Authorization (v0.4.x)
 
