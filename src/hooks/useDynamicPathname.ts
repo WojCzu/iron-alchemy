@@ -1,22 +1,22 @@
-import { useSelectedLayoutSegments } from "next/navigation";
+import { usePathname as usePathnameNext } from "next/navigation";
 import { usePathname } from "@/i18n/routing";
 
 export function useDynamicPathname(): string {
-	const pathname = usePathname();
-	const layoutSegments = useSelectedLayoutSegments();
-	const originalSegments = pathname.split("/").filter(Boolean);
-	const catchAllLength = layoutSegments.length - originalSegments.length + 1;
+	const i18nSegments = usePathname().split("/").filter(Boolean);
+	const nextSegments = usePathnameNext().split("/").filter(Boolean).slice(1);
+	const catchAllLength = nextSegments.length - i18nSegments.length + 1;
+
 	let usedSegments = 0;
-	const dynamicPathname = originalSegments
+	const dynamicPathname = i18nSegments
 		.map((segment) => {
 			if (segment.startsWith("[...") && segment.endsWith("]")) {
-				const segments = layoutSegments.slice(usedSegments, catchAllLength + 1).join("/");
+				const segments = nextSegments.slice(usedSegments, catchAllLength + 1).join("/");
 				usedSegments += catchAllLength;
 				return segments;
 			}
 
 			if (segment.startsWith("[") && segment.endsWith("]")) {
-				const dynamicSegment = layoutSegments[usedSegments] || segment;
+				const dynamicSegment = nextSegments[usedSegments] || segment;
 				usedSegments++;
 				return dynamicSegment;
 			}
