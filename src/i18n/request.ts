@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { getRequestConfig } from "next-intl/server";
 import { routing } from "./routing";
 
@@ -14,6 +16,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
 			...(await import(`../../messages/${locale}/common.json`)).default,
 			...(await import(`../../messages/${locale}/home.json`)).default,
 			...(await import(`../../messages/${locale}/coming-soon.json`)).default,
+			...(await import(`../../messages/${locale}/tools.json`)).default,
 		},
 	};
 });

@@ -12,7 +12,10 @@
 				"home": "Home",
 				"blog": "Blog",
 				"tools": "Tools",
-				"dashboard": "Dashboard"
+				"dashboard": "Dashboard",
+				"one-rep-max": "One Rep Max",
+				"dots": "DOTS",
+				"load-drop": "Load Drop"
 			}
 		},
 		"LocaleSwitcher": {
@@ -22,6 +25,9 @@
 		"Button": {
 			"cta": "Sign Up Now",
 			"back": "Take me back"
+		},
+		"Breadcrumb": {
+			"more": "More"
 		}
 	}
 }

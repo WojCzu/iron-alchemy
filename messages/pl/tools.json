@@ -1,0 +1,154 @@
+{
+	"Tools": {
+		"Meta": {
+			"title": "Narzędzia Treningowe - Iron Alchemy",
+			"description": "Skorzystaj z naszych specjalistycznych kalkulatorów do treningu siłowego i trójboju"
+		},
+		"Navigation": {
+			"loadDrop": "Kalkulator Zmniejszenia Ciężaru",
+			"loadDropDescription": "Oblicz optymalne ciężary dla twoich serii backoff na podstawie głównych serii treningowych. Idealne narzędzie do planowania objętości treningu i ćwiczeń uzupełniających.",
+			"oneRepMax": "Kalkulator Maksymalnego Ciężaru",
+			"oneRepMaxDescription": "Oblicz szacunkowy maksymalny ciężar na podstawie twojej najlepszej serii treningowej. Niezbędne narzędzie do programowania treningu siłowego i śledzenia postępów.",
+			"dots": "Kalkulator DOTS",
+			"dotsDescription": "Oblicz swój wynik DOTS, aby porównać poziom siły między różnymi kategoriami wagowymi. Idealne narzędzie do przygotowania do zawodów i śledzenia postępów."
+		},
+		"LoadDrop": {
+			"Meta": {
+				"title": "Kalkulator Zmniejszenia Ciężaru - Iron Alchemy",
+				"description": "Oblicz optymalne ciężary dla twoich serii backoff na podstawie głównych serii treningowych. Idealne narzędzie do planowania objętości treningu i ćwiczeń uzupełniających."
+			},
+			"Page": {
+				"title": "Kalkulator Zmniejszenia Ciężaru"
+			},
+			"Form": {
+				"instructions": "Wprowadź wszystkie dane dla serii głównej oraz planowane dane dla serii backoff",
+				"labels": {
+					"sets": "Serie",
+					"reps": "Powtórzenia",
+					"rpe": "RPE",
+					"weight": "Ciężar (kg)"
+				},
+				"errors": {
+					"weight": {
+						"required": "Wprowadź ciężar",
+						"positive": "Ciężar nie może być zerowy ani ujemny"
+					},
+					"reps": {
+						"required": "Wprowadź liczbę powtórzeń",
+						"min": "Wymagane jest minimum 1 powtórzenie",
+						"max": "Maksymalnie dozwolone jest 12 powtórzeń"
+					},
+					"sets": {
+						"required": "Wprowadź liczbę serii",
+						"min": "Wymagana jest minimum 1 seria"
+					},
+					"rpe": {
+						"required": "Wprowadź wartość RPE",
+						"min": "RPE musi wynosić co najmniej 4",
+						"max": "RPE nie może być wyższe niż 10"
+					}
+				},
+				"sections": {
+					"mainSet": {
+						"title": "Seria Główna",
+						"description": "Wprowadź szczegóły twojej głównej serii treningowej"
+					},
+					"backoffSet": {
+						"title": "Seria Backoff",
+						"description": "Wprowadź docelową liczbę powtórzeń i RPE dla serii backoff"
+					}
+				},
+				"result": {
+					"fillAllFields": "Wypełnij wszystkie pola, aby obliczyć ciężar dla serii backoff",
+					"backoffWeight": "Ciężar Serii Backoff",
+					"explanation": "To zalecany ciężar dla twoich serii backoff bazujący na wynikach serii głównej"
+				}
+			}
+		},
+		"OneRepMax": {
+			"Meta": {
+				"title": "Kalkulator Maksymalnego Ciężaru - Iron Alchemy",
+				"description": "Oblicz szacunkowy maksymalny ciężar na podstawie twoich serii treningowych. Niezbędne narzędzie do programowania treningu siłowego i śledzenia postępów."
+			},
+			"Page": {
+				"title": "Kalkulator Maksymalnego Ciężaru"
+			},
+			"Form": {
+				"title": "Kalkulator Maksymalnego Ciężaru",
+				"description": "Oblicz szacunkowy maksymalny ciężar na podstawie twojej najlepszej serii treningowej.",
+				"labels": {
+					"reps": "Powtórzenia",
+					"rpe": "RPE",
+					"weight": "Ciężar (kg)",
+					"submit": "Oblicz",
+					"method": {
+						"label": "Wybierz metodę obliczania",
+						"methods": "{method, select, epley {Epley} brzycki {Brzycki} landers {Landers} rpeChart {Tabela RPE} other {Nieznana}}"
+					}
+				},
+				"errors": {
+					"weight": {
+						"required": "Wprowadź ciężar",
+						"positive": "Ciężar nie może być zerowy ani ujemny"
+					},
+					"reps": {
+						"required": "Wprowadź liczbę powtórzeń",
+						"min": "Wymagane jest minimum 1 powtórzenie",
+						"max": "Maksymalnie dozwolone jest 12 powtórzeń",
+						"integer": "Wprowadź całkowitą liczbę powtórzeń"
+					},
+					"rpe": {
+						"required": "Wprowadź wartość RPE",
+						"min": "RPE musi wynosić co najmniej 4",
+						"max": "RPE nie może być wyższe niż 10",
+						"step": "RPE musi być wielokrotnością 0.5"
+					}
+				},
+				"result": {
+					"oneRepMax": "Maksymalny Ciężar",
+					"explanation": "To szacunkowy maksymalny ciężar obliczony na podstawie twoich danych",
+					"fillAllFields": "Wypełnij wszystkie pola, aby obliczyć maksymalny ciężar"
+				}
+			}
+		},
+		"Dots": {
+			"Meta": {
+				"title": "Kalkulator DOTS - Iron Alchemy",
+				"description": "Oblicz swój wynik DOTS, aby porównać poziom siły między różnymi kategoriami wagowymi. Idealne narzędzie do przygotowania do zawodów i śledzenia postępów."
+			},
+			"Page": {
+				"title": "Kalkulator DOTS"
+			},
+			"Form": {
+				"title": "Kalkulator DOTS",
+				"description": "Oblicz swój wynik DOTS, aby porównać poziom siły między różnymi kategoriami wagowymi.",
+				"labels": {
+					"gender": "Płeć",
+					"male": "Mężczyzna",
+					"female": "Kobieta",
+					"units": "Jednostki",
+					"kg": "Kilogramy (kg)",
+					"lbs": "Funty (lbs)",
+					"bodyWeight": "Masa ciała",
+					"liftedWeight": "Podniesiony ciężar",
+					"submit": "Oblicz"
+				},
+				"errors": {
+					"bodyWeight": {
+						"required": "Wprowadź swoją masę ciała",
+						"positive": "Masa ciała nie może być zerowa ani ujemna"
+					},
+					"liftedWeight": {
+						"required": "Wprowadź podniesiony ciężar",
+						"positive": "Podniesiony ciężar nie może być zerowy ani ujemny"
+					}
+				},
+				"result": {
+					"dots": "Wynik DOTS",
+					"explanation": "To twój wynik DOTS obliczony na podstawie wprowadzonych danych",
+					"fillAllFields": "Wypełnij wszystkie pola, aby obliczyć wynik DOTS"
+				}
+			}
+		}
+	}
+}

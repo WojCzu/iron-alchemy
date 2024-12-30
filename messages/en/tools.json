@@ -1,0 +1,158 @@
+{
+	"Tools": {
+		"Meta": {
+			"title": "Training Tools - Iron Alchemy",
+			"description": "Utilize our specialized powerlifting and strength training calculators"
+		},
+		"Navigation": {
+			"loadDrop": "Load Drop Calculator",
+			"loadDropDescription": "Calculate optimal weights for your backoff sets based on your main working sets. Perfect for planning volume work and accessory movements.",
+			"oneRepMax": "One Rep Max Calculator",
+			"oneRepMaxDescription": "Calculate your estimated one rep max based on your best working set. Essential tool for strength programming and progress tracking.",
+			"dots": "DOTS Calculator",
+			"dotsDescription": "Calculate your DOTS score to compare strength levels across different weight classes. Perfect for competition preparation and progress tracking."
+		},
+		"LoadDrop": {
+			"Meta": {
+				"title": "Load Drop Calculator - Iron Alchemy",
+				"description": "Calculate optimal weights for your backoff sets based on your main working sets. Perfect for planning volume work and accessory movements."
+			},
+			"Page": {
+				"title": "Calculate Load Drop"
+			},
+			"Form": {
+				"instructions": "Add all the data for the main set and the assumed data to be done in the backoff sets",
+				"labels": {
+					"sets": "Sets",
+					"reps": "Reps",
+					"rpe": "RPE",
+					"weight": "Weight (kg)"
+				},
+				"errors": {
+					"weight": {
+						"required": "Please enter the weight",
+						"positive": "Weight cannot be zero or negative"
+					},
+					"reps": {
+						"required": "Please enter the number of reps",
+						"min": "At least 1 rep is required",
+						"max": "Maximum 12 reps allowed",
+						"integer": "Please enter a whole number of reps"
+					},
+					"sets": {
+						"required": "Please enter the number of sets",
+						"min": "At least 1 set is required",
+						"integer": "Please enter a whole number of sets"
+					},
+					"rpe": {
+						"required": "Please enter the RPE value",
+						"min": "RPE must be at least 4",
+						"max": "RPE cannot be higher than 10",
+						"step": "RPE must be a multiple of 0.5"
+					}
+				},
+				"sections": {
+					"mainSet": {
+						"title": "Main Set",
+						"description": "Enter the details of your main working set"
+					},
+					"backoffSet": {
+						"title": "Backoff Set",
+						"description": "Enter your target reps and RPE for the backoff sets"
+					}
+				},
+				"result": {
+					"fillAllFields": "Fill in all fields to calculate your backoff set weight",
+					"backoffWeight": "Backoff Weight",
+					"explanation": "This is the recommended weight for your backoff sets based on your main set performance"
+				}
+			}
+		},
+		"OneRepMax": {
+			"Meta": {
+				"title": "One Rep Max Calculator - Iron Alchemy",
+				"description": "Calculate your estimated one rep max based on your best working set. Essential tool for strength programming and progress tracking."
+			},
+			"Page": {
+				"title": "One Rep Max Calculator"
+			},
+			"Form": {
+				"title": "One Rep Max Calculator",
+				"description": "Calculate your estimated one rep max based on your best working set.",
+				"labels": {
+					"reps": "Reps",
+					"rpe": "RPE",
+					"weight": "Weight (kg)",
+					"submit": "Calculate",
+					"method": {
+						"label": "Select calculation method",
+						"methods": "{method, select, epley {Epley} brzycki {Brzycki} landers {Landers} rpeChart {RPE Chart} other {Unknown}}"
+					}
+				},
+				"errors": {
+					"weight": {
+						"required": "Please enter the weight",
+						"positive": "Weight cannot be zero or negative"
+					},
+					"reps": {
+						"required": "Please enter the number of reps",
+						"min": "At least 1 rep is required",
+						"max": "Maximum 12 reps allowed",
+						"integer": "Please enter a whole number of reps"
+					},
+					"rpe": {
+						"required": "Please enter the RPE value",
+						"min": "RPE must be at least 4",
+						"max": "RPE cannot be higher than 10",
+						"step": "RPE must be a multiple of 0.5"
+					}
+				},
+				"result": {
+					"oneRepMax": "One Rep Max",
+					"explanation": "This is the estimated one rep max based on your data",
+					"fillAllFields": "Fill in all fields to calculate your one rep max"
+				}
+			}
+		},
+		"Dots": {
+			"Meta": {
+				"title": "DOTS Calculator - Iron Alchemy",
+				"description": "Calculate your DOTS score to compare strength levels across different weight classes. Perfect for competition preparation and progress tracking."
+			},
+			"Page": {
+				"title": "DOTS Calculator"
+			},
+			"Form": {
+				"title": "DOTS Calculator",
+				"description": "Calculate your DOTS score to compare strength levels across different weight classes.",
+
+				"labels": {
+					"gender": "Gender",
+					"male": "Male",
+					"female": "Female",
+					"units": "Units",
+					"kg": "Kilograms (kg)",
+					"lbs": "Pounds (lbs)",
+					"bodyWeight": "Body Weight",
+					"liftedWeight": "Lifted Weight",
+					"submit": "Calculate"
+				},
+				"errors": {
+					"bodyWeight": {
+						"required": "Please enter your body weight",
+						"positive": "Body weight cannot be zero or negative"
+					},
+					"liftedWeight": {
+						"required": "Please enter the weight you lifted",
+						"positive": "Lifted weight cannot be zero or negative"
+					}
+				},
+				"result": {
+					"dots": "DOTS Score",
+					"explanation": "This is the DOTS score based on your data",
+					"fillAllFields": "Fill in all fields to calculate your DOTS score"
+				}
+			}
+		}
+	}
+}

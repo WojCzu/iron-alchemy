@@ -12,7 +12,10 @@
 				"home": "Strona główna",
 				"blog": "Blog",
 				"tools": "Narzędzia",
-				"dashboard": "Panel"
+				"dashboard": "Panel",
+				"one-rep-max": "Maksymalny Ciężar",
+				"dots": "DOTS",
+				"load-drop": "Zmniejszenie Ciężaru"
 			}
 		},
 		"LocaleSwitcher": {
@@ -22,6 +25,9 @@
 		"Button": {
 			"cta": "Zarejestruj się",
 			"back": "Zabierz mnie z powrotem"
+		},
+		"Breadcrumb": {
+			"more": "Więcej"
 		}
 	}
 }
