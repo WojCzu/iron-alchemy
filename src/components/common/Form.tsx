@@ -189,7 +189,7 @@ const FormNumericField = <T extends FieldValues>({
 		<FormField
 			control={control}
 			name={name}
-			render={({ field: { value, onChange, ...props } }) => (
+			render={({ field: { onChange, ...props } }) => (
 				<FormItem>
 					<FormLabel>{label}</FormLabel>
 					<FormControl>
@@ -198,10 +198,10 @@ const FormNumericField = <T extends FieldValues>({
 							type="number"
 							min={min}
 							max={max}
-							value={value ?? ""}
 							onChange={(e) => {
-								const value = e.target.value === "" ? undefined : parseFloat(e.target.value);
-								onChange(value);
+								const inputValue = e.target.value;
+								const parsedValue = inputValue === "" ? inputValue : parseFloat(inputValue);
+								onChange(parsedValue);
 							}}
 						/>
 					</FormControl>

@@ -5,6 +5,6 @@ export const requiredNumber = (
 	conditions: (schema: z.ZodNumber) => z.ZodNumber,
 ) =>
 	z
-		.union([z.number(), z.literal(undefined)])
-		.refine((val) => val !== undefined, { message: requiredMessage })
+		.union([z.number(), z.literal("")])
+		.refine((val) => val !== "", { message: requiredMessage })
 		.pipe(conditions(z.number()));
