@@ -39,7 +39,7 @@ export default async function RootLayout({ children, params: { locale } }: RootL
 		<html lang={locale} suppressHydrationWarning>
 			<body
 				className={cn(
-					"grid min-h-dvh grid-rows-[auto_1fr_auto] bg-background font-sans antialiased",
+					"grid min-h-svh grid-rows-[auto_1fr_auto] bg-background font-sans antialiased",
 					fontSans.variable,
 				)}
 			>
