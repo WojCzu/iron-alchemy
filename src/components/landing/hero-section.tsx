@@ -7,7 +7,7 @@ export function HeroSection() {
 	const tBtn = useTranslations("Common.Button");
 
 	return (
-		<section className="h-dvh px-8" aria-labelledby="hero-section">
+		<section className="h-svh px-8" aria-labelledby="hero-section">
 			<HeroImage />
 			<div className="h-full">
 				<div className="mx-auto flex h-full max-w-[1800px] flex-col items-start justify-center gap-8">
