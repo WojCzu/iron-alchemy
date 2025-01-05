@@ -20,7 +20,7 @@ export function OneRepMaxForm() {
 	const form = useForm<OneRepMaxFormValues>({
 		resolver: zodResolver(oneRepMaxSchema),
 		mode: "onChange",
-		defaultValues: { reps: undefined, rpe: 10, weight: undefined, method: "rpeChart" },
+		defaultValues: { method: "rpeChart", rpe: 10 },
 	});
 	const [oneRepMax, setOneRepMax] = useState<number | undefined>(undefined);
 
@@ -29,7 +29,7 @@ export function OneRepMaxForm() {
 
 	useEffect(() => {
 		if (!methodUsesRpe) {
-			form.setValue("rpe", 10);
+			form.setValue("rpe", 10, { shouldValidate: true });
 		}
 	}, [methodUsesRpe, form]);
 
