@@ -1,11 +1,7 @@
 # Iron Alchemy
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="public/assets/logo-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="public/assets/logo-light.svg">
-    <img alt="Iron Alchemy Logo" src="public/assets/logo-dark.svg" width="600">
-  </picture>
+<p align="center" style="padding: 1rem; background-color: #0d1117;">
+  <img alt="Iron Alchemy Logo" src="public/assets/logo.svg" width="600">
 </p>
 
 ## Overview

@@ -3,7 +3,6 @@ import { getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/contexts/theme-context";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { routing } from "@/i18n/routing";
@@ -43,18 +42,11 @@ export default async function RootLayout({ children, params: { locale } }: RootL
 					fontSans.variable,
 				)}
 			>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="system"
-					enableSystem
-					disableTransitionOnChange
-				>
-					<NextIntlClientProvider messages={messages}>
-						<Header />
-						<main id="main-content">{children}</main>
-						<Footer />
-					</NextIntlClientProvider>
-				</ThemeProvider>
+				<NextIntlClientProvider messages={messages}>
+					<Header />
+					<main id="main-content">{children}</main>
+					<Footer />
+				</NextIntlClientProvider>
 			</body>
 		</html>
 	);
